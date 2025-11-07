@@ -1,5 +1,5 @@
 // ESP32 Web Flasher JavaScript
-import { ESPLoader, Transport } from "https://unpkg.com/esptool-js@0.5.4/bundle.js";
+import { ESPLoader, Transport } from "https://unpkg.com/esptool-js/bundle.js";
 
 // DOM Elements
 const connectBtn = document.getElementById('connectBtn');
@@ -158,6 +158,59 @@ function parseFlashAddress(addressStr) {
     return address;
 }
 
+function getFlashSizeFromId(flashId) {
+    // Flash ID format: [Manufacturer ID][Memory Type][Capacity]
+    // Capacity byte determines flash size
+    const capacityByte = (flashId >> 16) & 0xFF;
+    
+    // Common flash size mappings based on JEDEC standard
+    const flashSizes = {
+        0x10: '64KB',    // 2^16 bytes
+        0x11: '128KB',   // 2^17 bytes  
+        0x12: '256KB',   // 2^18 bytes
+        0x13: '512KB',   // 2^19 bytes
+        0x14: '1MB',     // 2^20 bytes
+        0x15: '2MB',     // 2^21 bytes
+        0x16: '4MB',     // 2^22 bytes
+        0x17: '8MB',     // 2^23 bytes
+        0x18: '16MB',    // 2^24 bytes
+        0x19: '32MB',    // 2^25 bytes
+        0x1A: '64MB',    // 2^26 bytes
+    };
+    
+    const manufacturer = flashId & 0xFF;
+    const memoryType = (flashId >> 8) & 0xFF;
+    
+    // Log detailed flash information
+    log(`Flash Manufacturer ID: 0x${manufacturer.toString(16).padStart(2, '0').toUpperCase()}`);
+    log(`Flash Memory Type: 0x${memoryType.toString(16).padStart(2, '0').toUpperCase()}`);
+    log(`Flash Capacity Code: 0x${capacityByte.toString(16).padStart(2, '0').toUpperCase()}`);
+    
+    // Get manufacturer name
+    const manufacturerNames = {
+        0x20: 'Micron/Numonyx/ST',
+        0xEF: 'Winbond',
+        0xC8: 'GigaDevice', 
+        0x1C: 'EON',
+        0x68: 'Boya',
+        0x9D: 'ISSI',
+        0xC2: 'MXIC',
+        0x85: 'Puya'
+    };
+    
+    const manufacturerName = manufacturerNames[manufacturer] || `Unknown (0x${manufacturer.toString(16)})`;
+    log(`Flash Manufacturer: ${manufacturerName}`);
+    
+    const flashSize = flashSizes[capacityByte];
+    if (flashSize) {
+        log(`Detected flash size: ${flashSize}`);
+        return flashSize;
+    } else {
+        log(`Unknown flash capacity code: 0x${capacityByte.toString(16).padStart(2, '0')}`);
+        return 'Unknown Size';
+    }
+}
+
 // Event Listeners
 browseBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -242,12 +295,24 @@ connectBtn.addEventListener('click', async () => {
         chip = await esploader.main();
         
         const chipName = esploader.chip.CHIP_NAME || 'ESP32';
-        const flashSize = esploader.flash_size ? `${(esploader.flash_size / (1024*1024)).toFixed(1)}MB` : 'Unknown';
-        
         log(`Kết nối thành công với ${chipName}`);
-        log(`Flash size: ${flashSize}`);
         
-        updateConnectionStatus(true, `${chipName} (${flashSize})`);
+        // Read flash ID to get accurate flash size
+        log('Đang đọc thông tin flash memory...');
+        try {
+            const flashId = await esploader.readFlashId();
+            log(`Flash ID: 0x${flashId.toString(16).padStart(6, '0').toUpperCase()}`);
+            
+            // Extract flash size from flash ID
+            const flashSize = getFlashSizeFromId(flashId);
+            
+            updateConnectionStatus(true, `${chipName} (${flashSize})`);
+        } catch (flashError) {
+            log(`Không thể đọc flash ID: ${flashError.message}`);
+            log('Sử dụng thông tin flash mặc định');
+            updateConnectionStatus(true, `${chipName} (Flash: Unknown)`);
+        }
+        
         enableControls(true);
         
     } catch (err) {

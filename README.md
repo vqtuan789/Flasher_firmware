@@ -2,6 +2,8 @@
 
 A web-based tool for flashing firmware to ESP32 microcontrollers directly from your browser using the Web Serial API.
 
+Have a look: [ESP32 Web Flasher](https://tienhuyiot.github.io/esp_web_flasher/)
+
 ## Features
 
 - 🔌 Direct USB connection to ESP32 via Web Serial API
@@ -57,10 +59,10 @@ esp_web_flasher/
    - Upload your own .bin file (drag & drop supported)
 
 3. **Set flash address**: Enter the appropriate hex address based on your firmware type:
+   - `0x000` - Merge-bin
    - `0x1000` - Bootloader
    - `0x8000` - Partition table
    - `0x10000` - Application (default)
-   - `0x110000` - OTA app partition
 
 4. **Flash firmware**: Click "🚀 Bắt đầu nạp" to start flashing
 
@@ -77,7 +79,6 @@ Understanding the correct flash addresses is crucial for successful firmware fla
 | `0x1000`   | Bootloader          | ESP32 bootloader binary                       |
 | `0x8000`   | Partition table     | Partition layout configuration                 |
 | `0x10000`  | Application         | Main application firmware (default)           |
-| `0x110000` | OTA app partition   | Over-the-Air update application partition     |
 
 ### Important Notes
 
@@ -130,6 +131,7 @@ Understanding the correct flash addresses is crucial for successful firmware fla
 ### Key Dependencies
 
 - [esptool-js](https://github.com/espressif/esptool-js): ESP32 flashing library
+- [esptool-js-doc](https://espressif.github.io/esptool-js/docs/index.html): Javascript implementation of esptool
 - [crypto-js](https://github.com/brix/crypto-js): MD5 hash calculation
 - Web Serial API: Browser API for serial communication
 

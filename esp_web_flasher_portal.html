@@ -260,12 +260,24 @@ connectBtn.addEventListener('click', async () => {
     chip = await esploader.main();
     
     const chipName = esploader.chip.CHIP_NAME || 'ESP32';
-    const flashSize = esploader.flash_size ? `${(esploader.flash_size / (1024*1024)).toFixed(1)}MB` : 'Unknown';
-    
     log(`Kết nối thành công với ${chipName}`);
-    log(`Flash size: ${flashSize}`);
     
-    updateConnectionStatus(true, `${chipName} (${flashSize})`);
+    // Read flash ID to get accurate flash size
+    log('Đang đọc thông tin flash memory...');
+    try {
+        const flashId = await esploader.flash_id();
+        log(`Flash ID: 0x${flashId.toString(16).padStart(6, '0').toUpperCase()}`);
+        
+        // Extract flash size from flash ID
+        const flashSize = getFlashSizeFromId(flashId);
+        
+        updateConnectionStatus(true, `${chipName} (${flashSize})`);
+    } catch (flashError) {
+        log(`Không thể đọc flash ID: ${flashError.message}`);
+        log('Sử dụng thông tin flash mặc định');
+        updateConnectionStatus(true, `${chipName} (Flash: Unknown)`);
+    }
+    
     enableControls(true);
     
   } catch (err) {
@@ -333,6 +345,69 @@ flashBtn.addEventListener('click', async () => {
           reader.readAsBinaryString(inputFile);
       });
   };
+
+  function getFlashSizeFromId(flashId) {
+      // Extract manufacturer ID (first byte)
+      const manufacturerId = (flashId >> 16) & 0xFF;
+      
+      // Extract device ID (second and third bytes)
+      const deviceId = flashId & 0xFFFF;
+      
+      // Extract capacity code (bits 16-19 of device ID)
+      const capacityCode = (deviceId >> 8) & 0x1F;
+      
+      // Get manufacturer name
+      const manufacturers = {
+          0x20: 'XMC (Micron)',
+          0x68: 'BOYA',
+          0x85: 'PUYA',
+          0x8C: 'ESMT',
+          0x9D: 'ISSI',
+          0xA1: 'Fudan Micro',
+          0xC2: 'MXIC',
+          0xC8: 'GigaDevice',
+          0xE0: 'Berg Micro',
+          0xEF: 'Winbond',
+          0xFF: 'Unknown'
+      };
+      
+      const manufacturerName = manufacturers[manufacturerId] || `Unknown (0x${manufacturerId.toString(16).toUpperCase()})`;
+      
+      // Calculate flash size from capacity code (JEDEC standard)
+      // Capacity = 2^(capacity_code) bytes
+      let flashSizeBytes = 0;
+      let flashSizeStr = 'Unknown';
+      
+      if (capacityCode >= 10 && capacityCode <= 28) {
+          flashSizeBytes = Math.pow(2, capacityCode);
+          
+          if (flashSizeBytes >= 1024 * 1024) {
+              flashSizeStr = `${(flashSizeBytes / (1024 * 1024)).toFixed(1)}MB`;
+          } else if (flashSizeBytes >= 1024) {
+              flashSizeStr = `${(flashSizeBytes / 1024).toFixed(1)}KB`;
+          } else {
+              flashSizeStr = `${flashSizeBytes}B`;
+          }
+          
+          // Common flash sizes validation
+          const commonSizes = [1, 2, 4, 8, 16, 32, 64, 128];
+          const sizeMB = flashSizeBytes / (1024 * 1024);
+          if (!commonSizes.includes(sizeMB)) {
+              flashSizeStr += ' (uncommon size)';
+          }
+      } else {
+          flashSizeStr = `Unknown (capacity code: 0x${capacityCode.toString(16).toUpperCase()})`;
+      }
+      
+      // Log detailed information
+      console.log(`Flash Analysis:
+          Manufacturer ID: 0x${manufacturerId.toString(16).toUpperCase()} (${manufacturerName})
+          Device ID: 0x${deviceId.toString(16).toUpperCase()}
+          Capacity Code: 0x${capacityCode.toString(16).toUpperCase()} (${capacityCode})
+          Calculated Size: ${flashSizeStr}`);
+      
+      return flashSizeStr;
+  }
 
   function parseFlashAddress(addressStr) {
     // Remove whitespace and convert to lowercase
