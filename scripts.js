@@ -18,6 +18,7 @@ const chipInfoEl = document.getElementById('chipInfo');
 const speedInfo = document.getElementById('speedInfo');
 const clearLogBtn = document.getElementById('clearLogBtn');
 const openOfficialBtn = document.getElementById('openOfficialBtn');
+const flashAddressInput = document.getElementById('flashAddress');
 
 // Global Variables
 let device = null;
@@ -126,6 +127,37 @@ function readUploadedFileAsBinaryString(inputFile) {
     });
 }
 
+function parseFlashAddress(addressStr) {
+    // Remove whitespace and convert to lowercase
+    addressStr = addressStr.trim().toLowerCase();
+    
+    // Check if it starts with 0x
+    if (!addressStr.startsWith('0x')) {
+        throw new Error('Địa chỉ flash phải bắt đầu bằng "0x" (ví dụ: 0x10000)');
+    }
+    
+    // Remove 0x prefix and validate hex format
+    const hexStr = addressStr.slice(2);
+    if (!/^[0-9a-f]+$/.test(hexStr)) {
+        throw new Error('Địa chỉ flash chứa ký tự không hợp lệ. Chỉ được phép sử dụng 0-9, A-F');
+    }
+    
+    // Convert to integer
+    const address = parseInt(addressStr, 16);
+    
+    // Validate address range (should be reasonable for ESP32)
+    if (address < 0 || address > 0x400000) { // 4MB max
+        throw new Error('Địa chỉ flash không hợp lệ (0x0 - 0x400000)');
+    }
+    
+    // Check alignment (should be divisible by 4096 for flash sectors)
+    if (address % 4096 !== 0) {
+        log(`⚠️ Cảnh báo: Địa chỉ ${addressStr} không căn chỉnh với sector (4KB). Khuyến nghị sử dụng địa chỉ chia hết cho 0x1000`);
+    }
+    
+    return address;
+}
+
 // Event Listeners
 browseBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -154,6 +186,39 @@ fileDrop.addEventListener('drop', (e) => {
     const files = e.dataTransfer.files;
     if (files.length > 0) {
         handleFileSelect(files[0]);
+    }
+});
+
+// Flash address input validation
+flashAddressInput.addEventListener('input', (e) => {
+    const value = e.target.value.trim();
+    
+    // Reset styles
+    e.target.style.borderColor = '';
+    e.target.style.backgroundColor = '';
+    
+    if (value === '') {
+        e.target.style.borderColor = '#ef4444';
+        return;
+    }
+    
+    try {
+        parseFlashAddress(value);
+        // Valid address
+        e.target.style.borderColor = '#10b981';
+        e.target.style.backgroundColor = '#f0fdf4';
+    } catch (error) {
+        // Invalid address
+        e.target.style.borderColor = '#ef4444';
+        e.target.style.backgroundColor = '#fef2f2';
+    }
+});
+
+// Add some common flash addresses as suggestions
+flashAddressInput.addEventListener('focus', (e) => {
+    if (!e.target.hasAttribute('data-initialized')) {
+        e.target.setAttribute('data-initialized', 'true');
+        e.target.setAttribute('title', 'Địa chỉ thông dụng:\n0x1000 - Bootloader\n0x8000 - Partition table\n0x10000 - Application (mặc định)\n0x110000 - OTA app partition');
     }
 });
 
@@ -242,8 +307,15 @@ flashBtn.addEventListener('click', async () => {
         let fileData = await readUploadedFileAsBinaryString(selectedFile);
         log(`Đã đọc file: ${fileData.length} bytes`);
         
-        // Flash at address 0x10000 (typical for application)
-        const flashAddress = 0x10000;
+        // Parse flash address from input
+        let flashAddress;
+        try {
+            flashAddress = parseFlashAddress(flashAddressInput.value);
+            log(`Địa chỉ flash: ${flashAddressInput.value} (${flashAddress})`);
+        } catch (error) {
+            alert('Lỗi địa chỉ flash: ' + error.message);
+            return;
+        }
 
         const fileArray = [];
         fileArray.push({ data: fileData, address: flashAddress });

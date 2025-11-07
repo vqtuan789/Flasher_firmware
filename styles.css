@@ -59,14 +59,35 @@ button.secondary {
 }
 
 select,
-input[type=file] {
+input[type=file],
+input[type=text] {
   padding: 8px;
   border-radius: 8px;
   border: 1px solid #e2e8f0;
 }
 
-input[type=file]:hover {
+input[type=file]:hover,
+input[type=text]:hover {
   border-color: var(--accent);
+}
+
+input[type=text]:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(11, 132, 255, 0.1);
+}
+
+/* Flash address input specific styles */
+#flashAddress {
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 12px;
+  text-align: center;
+  background: #f8fafc;
+}
+
+#flashAddress:invalid {
+  border-color: #ef4444;
+  background: #fef2f2;
 }
 
 #progress {

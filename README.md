@@ -20,7 +20,7 @@ esp_web_flasher/
 ├── index.html                    # Main HTML file (refactored)
 ├── styles.css                    # All CSS styles
 ├── scripts.js                    # Main JavaScript application logic
-├── esp_32_webflasher_basic.html  # Original single-file version
+├── esp_web_flasher_portal.html   # Original single-file version
 └── README.md                     # This file
 ```
 
@@ -45,18 +45,46 @@ esp_web_flasher/
 
 ### Option 2: Using Single File Version
 
-1. **Open `esp_32_webflasher_basic.html`** directly in browser
+1. **Open `esp_web_flasher_portal.html`** directly in browser
 2. **This version has everything inline** and works with file:// protocol
 
 ## How to Flash Firmware
 
 1. **Connect ESP32**: Click "🔌 Kết nối" button and select your ESP32 device
-2. **Select firmware**: 
+
+2. **Select firmware**:
    - Choose from sample firmware list, OR
    - Upload your own .bin file (drag & drop supported)
-3. **Flash firmware**: Click "🚀 Bắt đầu nạp" to start flashing
-4. **Monitor progress**: Watch the progress bar and speed information
-5. **Reset device**: Optionally reset ESP32 after successful flashing
+
+3. **Set flash address**: Enter the appropriate hex address based on your firmware type:
+   - `0x1000` - Bootloader
+   - `0x8000` - Partition table
+   - `0x10000` - Application (default)
+   - `0x110000` - OTA app partition
+
+4. **Flash firmware**: Click "🚀 Bắt đầu nạp" to start flashing
+
+5. **Monitor progress**: Watch the progress bar and speed information
+
+6. **Reset device**: Optionally reset ESP32 after successful flashing
+
+## Flash Address Guide
+
+Understanding the correct flash addresses is crucial for successful firmware flashing:
+
+| Address    | Purpose              | Description                                    |
+|------------|---------------------|------------------------------------------------|
+| `0x1000`   | Bootloader          | ESP32 bootloader binary                       |
+| `0x8000`   | Partition table     | Partition layout configuration                 |
+| `0x10000`  | Application         | Main application firmware (default)           |
+| `0x110000` | OTA app partition   | Over-the-Air update application partition     |
+
+### Important Notes
+
+- **Most common use case**: Flash your application firmware to `0x10000`
+- **Complete firmware**: If flashing a complete ESP-IDF project, you may need multiple files at different addresses
+- **Address validation**: The tool automatically validates hex format and reasonable address ranges
+- **Sector alignment**: Addresses should ideally be aligned to 4KB boundaries (0x1000 multiples)
 
 ## Requirements
 
@@ -84,7 +112,7 @@ esp_web_flasher/
    - **Solution**: Use one of these methods:
      - Use Live Server extension in VS Code
      - Run `python -m http.server 8000` in project directory
-     - Use `esp_32_webflasher_basic.html` (single-file version)
+     - Use `esp_web_flasher_portal.html` (single-file version)
 
 ### Driver Installation
 

@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>ESP32 Web Flasher — Nâng cao</title>
+    <title>TienHuyIoT — ESP32 Web Flasher</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="card">
         <div class="flex-between">
             <div>
-                <h1>ESP32 Web Flasher — Nâng cao</h1>
+                <h1>TienHuyIoT — ESP32 Web Flasher</h1>
                 <div class="muted">Dùng Chrome/Edge. Kết nối USB → chọn firmware → flash.</div>
             </div>
             <div>
@@ -43,6 +43,11 @@
         </div>
 
         <div style="margin-top:10px" class="row">
+            <div style="display:flex;align-items:center;gap:8px;">
+                <label for="flashAddress" style="margin:0;font-size:13px;color:#6b7280;">Địa chỉ flash:</label>
+                <input type="text" id="flashAddress" value="0x10000" placeholder="0x10000" 
+                       style="width:80px;padding:4px 8px;border:1px solid #e2e8f0;border-radius:4px;font-family:monospace;font-size:12px;">
+            </div>
             <button id="flashBtn" disabled>🚀 Bắt đầu nạp</button>
             <button id="eraseBtn" class="secondary" disabled>🗑️ Xoá Flash</button>
             <div style="flex:1"></div>
