@@ -23,9 +23,9 @@ const flashAddressInput = document.getElementById('flashAddress');
 // Global Variables
 let device = null;
 let transport = null;
-let esploader = null;
+let espLoader = null;
 let chip = null;
-let consoleBaudrate = 115200;
+let consoleBaudRate = 115200;
 let selectedFile = null;
 let startTime = 0;
 
@@ -106,7 +106,7 @@ function handleFileSelect(file) {
     fileName.textContent = `📁 ${file.name} (${(file.size/1024/1024).toFixed(2)}MB)`;
     log(`Đã chọn file: ${file.name}`);
     
-    if (esploader) {
+    if (espLoader) {
         flashBtn.disabled = false;
     }
 }
@@ -288,21 +288,21 @@ connectBtn.addEventListener('click', async () => {
 
         const loaderOptions = {
             transport: transport,
-            baudrate: consoleBaudrate,
+            baudrate: consoleBaudRate,
             terminal: espLoaderTerminal,
             debugLogging: false,
         };
 
-        esploader = new ESPLoader(loaderOptions);
-        chip = await esploader.main();
+        espLoader = new ESPLoader(loaderOptions);
+        chip = await espLoader.main();
         
-        const chipName = esploader.chip.CHIP_NAME || 'ESP32';
+        const chipName = espLoader.chip.CHIP_NAME || 'ESP32';
         log(`Kết nối thành công với ${chipName}`);
         
         // Read flash ID to get accurate flash size
         log('Đang đọc thông tin flash memory...');
         try {
-            const flashId = await esploader.readFlashId();
+            const flashId = await espLoader.readFlashId();
             log(`Flash ID: 0x${flashId.toString(16).padStart(6, '0').toUpperCase()}`);
             
             // Extract flash size from flash ID
@@ -328,7 +328,7 @@ connectBtn.addEventListener('click', async () => {
 disconnectBtn.addEventListener('click', async () => {
     if (transport) await transport.disconnect();
 
-    esploader = null;
+    espLoader = null;
     device = null;
     transport = null;
     chip = null;
@@ -342,7 +342,7 @@ disconnectBtn.addEventListener('click', async () => {
 
 // Erase flash
 eraseBtn.addEventListener('click', async () => {
-    if (!esploader) return alert('Chưa kết nối thiết bị');
+    if (!espLoader) return alert('Chưa kết nối thiết bị');
     
     if (!confirm('Bạn có chắc muốn xóa toàn bộ flash memory?')) return;
     
@@ -350,7 +350,7 @@ eraseBtn.addEventListener('click', async () => {
         log('Bắt đầu xóa flash memory...');
         setProgress(0);
         
-        await esploader.erase_flash();
+        await espLoader.eraseFlash();
         
         setProgress(100);
         log('Xóa flash thành công!');
@@ -363,7 +363,7 @@ eraseBtn.addEventListener('click', async () => {
 
 // Flash firmware
 flashBtn.addEventListener('click', async () => {
-    if (!esploader) return alert('Chưa kết nối thiết bị');
+    if (!espLoader) return alert('Chưa kết nối thiết bị');
     if (!selectedFile) return alert('Chưa chọn file firmware');
     
     try {
@@ -398,7 +398,7 @@ flashBtn.addEventListener('click', async () => {
             },
             calculateMD5Hash: (image) => CryptoJS.MD5(CryptoJS.enc.Latin1.parse(image)),
         };
-        await esploader.writeFlash(flashOptions);
+        await espLoader.writeFlash(flashOptions);
         
         setProgress(100);
         log('Nạp firmware thành công!');
@@ -410,7 +410,7 @@ flashBtn.addEventListener('click', async () => {
                 if (transport) {
                     await transport.disconnect();
                 }
-                await transport.connect(consoleBaudrate);
+                await transport.connect(consoleBaudRate);
                 await transport.setDTR(false);
                 await new Promise(resolve => setTimeout(resolve, 100));
                 await transport.setDTR(true);
