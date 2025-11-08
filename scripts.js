@@ -679,21 +679,34 @@ firmwareList.addEventListener('change', async (e) => {
         const file = await downloadFirmware(firmware);
         handleFileSelect(file);
         
+        // Keep firmware info visible after successful download
+        // Reset only the selection dropdown
+        setTimeout(() => {
+            e.target.value = '';
+            // Keep firmware info displayed - don't call showFirmwareInfo(null)
+        }, 100);
+        
     } catch (error) {
         alert(`Lỗi tải firmware: ${error.message}`);
         log(`❌ Chi tiết lỗi: ${error.stack || error.message}`);
+        
+        // Hide firmware info only on error
+        setTimeout(() => {
+            e.target.value = '';
+            showFirmwareInfo(null);
+        }, 100);
     }
-    
-    // Reset selection to allow reselecting the same firmware
-    setTimeout(() => {
-        e.target.value = '';
-        showFirmwareInfo(null);
-    }, 100);
 });
 
 // Clear log
 clearLogBtn.addEventListener('click', () => {
     logEl.textContent = 'Log đã được xóa.';
+});
+
+// Clear firmware info
+document.getElementById('clearFirmwareInfo').addEventListener('click', () => {
+    showFirmwareInfo(null);
+    log('Đã ẩn thông tin firmware');
 });
 
 // Open official tool

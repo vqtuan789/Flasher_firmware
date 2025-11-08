@@ -57,7 +57,12 @@
                         </select>
                         <div id="firmwareInfo" class="firmware-info d-none mt-2">
                             <div class="firmware-details">
-                                <div class="fw-semibold text-primary mb-1" id="firmwareName"></div>
+                                <div class="d-flex justify-content-between align-items-start mb-1">
+                                    <div class="fw-semibold text-primary" id="firmwareName"></div>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" id="clearFirmwareInfo" title="Ẩn thông tin firmware">
+                                        <i class="bi bi-x"></i>
+                                    </button>
+                                </div>
                                 <div class="small text-muted mb-2" id="firmwareDescription"></div>
                                 <div class="d-flex gap-3 small text-muted">
                                     <span><i class="bi bi-hdd me-1"></i><span id="firmwareSize"></span></span>

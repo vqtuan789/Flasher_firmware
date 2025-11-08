@@ -17,9 +17,9 @@
       "name": "Xiaozhi Music V2.0.4",
       "filename": "esp32s3_xiaozhi_music_v2.0.4.bin",
       "flashAddress": "0x00000",
-      "path": "https://github.com/TienHuyIoT/esp_web_flasher/blob/master/samples/esp32s3_xiaozhi_music_v2.0.4.bin",
-      "description": "Web server streaming nhạc cho ESP32-S3 với khả năng phát nhạc và điều khiển từ xa",
-      "size": "892KB",
+      "path": "https://cdn.jsdelivr.net/gh/TienHuyIoT/esp_web_flasher@master/samples/esp32s3_xiaozhi_music_v2.0.4.bin",
+      "description": "Firmware board TÍM OLED AI Xiaozhi Music Việt Nam",
+      "size": "8,743KB",
       "version": "2.0.4",
       "category": "AI Xiaozhi",
       "note": "Chỉ dành cho ESP32-S3 module"

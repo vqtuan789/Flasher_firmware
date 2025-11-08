@@ -1048,3 +1048,17 @@ html {
   color: var(--primary-color);
   font-size: 0.85em;
 }
+
+#clearFirmwareInfo {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 0.375rem;
+  transition: all var(--transition-speed) var(--transition-ease);
+}
+
+#clearFirmwareInfo:hover {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+  color: white;
+  transform: scale(1.05);
+}
