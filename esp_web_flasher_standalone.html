@@ -502,7 +502,7 @@ h3, .h5 {
   color: #e0e7ff;
   padding: 1rem;
   border-radius: var(--border-radius-lg);
-  max-height: 180px;
+  max-height: 400px;
   overflow: auto;
   font-size: 0.8125rem;
   font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
@@ -620,14 +620,14 @@ h3, .h5 {
   }
   
   .log-terminal {
-    min-height: 200px;
+    min-height: 300px;
   }
 }
 
 /* Large Desktop */
 @media (min-width: 1200px) and (max-width: 1399px) {
   .log-terminal {
-    min-height: 200px;
+    min-height: 300px;
   }
   
   .firmware-info {
@@ -1651,8 +1651,8 @@ function syncLogHeight() {
                     const availableHeight = leftHeight - elementsHeight - (logHeader ? logHeader.offsetHeight + 16 : 40) - 20; // 20px margin
                     
                     // Set minimum and maximum constraints
-                    const minHeight = 200;
-                    const maxHeight = 500;
+                    const minHeight = 300;
+                    const maxHeight = 600;
                     const finalHeight = Math.max(minHeight, Math.min(maxHeight, availableHeight));
                     
                     logTerminal.style.height = finalHeight + 'px';

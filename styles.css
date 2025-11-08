@@ -500,7 +500,7 @@ h3, .h5 {
   color: #e0e7ff;
   padding: 1rem;
   border-radius: var(--border-radius-lg);
-  max-height: 180px;
+  max-height: 400px;
   overflow: auto;
   font-size: 0.8125rem;
   font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
