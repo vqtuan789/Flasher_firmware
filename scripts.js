@@ -186,19 +186,21 @@ function getFlashSizeFromId(flashId) {
     log(`Flash Memory Type: 0x${memoryType.toString(16).padStart(2, '0').toUpperCase()}`);
     log(`Flash Capacity Code: 0x${capacityByte.toString(16).padStart(2, '0').toUpperCase()}`);
     
-    // Get manufacturer name
+    // Get manufacturer name (based on JEDEC standard)
     const manufacturerNames = {
         0x20: 'Micron/Numonyx/ST',
-        0xEF: 'Winbond',
-        0xC8: 'GigaDevice', 
-        0x1C: 'EON',
         0x68: 'Boya',
+        0x85: 'Puya',
+        0x8C: 'ESMT',
         0x9D: 'ISSI',
+        0x1C: 'EON',
         0xC2: 'MXIC',
-        0x85: 'Puya'
+        0xC8: 'GigaDevice', 
+        0xEF: 'Winbond'
+        // Note: Add new manufacturers only with verified JEDEC documentation
     };
     
-    const manufacturerName = manufacturerNames[manufacturer] || `Unknown (0x${manufacturer.toString(16)})`;
+    const manufacturerName = manufacturerNames[manufacturer] || `Unknown - ID 0x${manufacturer.toString(16).padStart(2, '0').toUpperCase()} (check JEDEC JEP106)`;
     log(`Flash Manufacturer: ${manufacturerName}`);
     
     const flashSize = flashSizes[capacityByte];

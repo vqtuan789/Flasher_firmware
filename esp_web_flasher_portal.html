@@ -187,6 +187,92 @@ function enableControls(connected) {
   connectBtn.disabled = connected;
 }
 
+function getFlashSizeFromId(flashId) {
+    // Flash ID format: [Manufacturer ID][Memory Type][Capacity]
+    // Capacity byte determines flash size
+    const capacityByte = (flashId >> 16) & 0xFF;
+    
+    // Common flash size mappings based on JEDEC standard
+    const flashSizes = {
+        0x10: '64KB',    // 2^16 bytes
+        0x11: '128KB',   // 2^17 bytes  
+        0x12: '256KB',   // 2^18 bytes
+        0x13: '512KB',   // 2^19 bytes
+        0x14: '1MB',     // 2^20 bytes
+        0x15: '2MB',     // 2^21 bytes
+        0x16: '4MB',     // 2^22 bytes
+        0x17: '8MB',     // 2^23 bytes
+        0x18: '16MB',    // 2^24 bytes
+        0x19: '32MB',    // 2^25 bytes
+        0x1A: '64MB',    // 2^26 bytes
+    };
+    
+    const manufacturer = flashId & 0xFF;
+    const memoryType = (flashId >> 8) & 0xFF;
+    
+    // Log detailed flash information
+    log(`Flash Manufacturer ID: 0x${manufacturer.toString(16).padStart(2, '0').toUpperCase()}`);
+    log(`Flash Memory Type: 0x${memoryType.toString(16).padStart(2, '0').toUpperCase()}`);
+    log(`Flash Capacity Code: 0x${capacityByte.toString(16).padStart(2, '0').toUpperCase()}`);
+    
+    // Get manufacturer name (based on JEDEC standard)
+    const manufacturerNames = {
+        0x20: 'Micron/Numonyx/ST',
+        0x68: 'Boya',
+        0x85: 'Puya',
+        0x8C: 'ESMT',
+        0x9D: 'ISSI',
+        0x1C: 'EON',
+        0xC2: 'MXIC',
+        0xC8: 'GigaDevice', 
+        0xEF: 'Winbond'
+        // Note: Add new manufacturers only with verified JEDEC documentation
+    };
+    
+    const manufacturerName = manufacturerNames[manufacturer] || `Unknown - ID 0x${manufacturer.toString(16).padStart(2, '0').toUpperCase()} (check JEDEC JEP106)`;
+    log(`Flash Manufacturer: ${manufacturerName}`);
+    
+    const flashSize = flashSizes[capacityByte];
+    if (flashSize) {
+        log(`Detected flash size: ${flashSize}`);
+        return flashSize;
+    } else {
+        log(`Unknown flash capacity code: 0x${capacityByte.toString(16).padStart(2, '0')}`);
+        return 'Unknown Size';
+    }
+}
+
+function parseFlashAddress(addressStr) {
+    // Remove whitespace and convert to lowercase
+    addressStr = addressStr.trim().toLowerCase();
+    
+    // Check if it starts with 0x
+    if (!addressStr.startsWith('0x')) {
+        throw new Error('Địa chỉ flash phải bắt đầu bằng "0x" (ví dụ: 0x10000)');
+    }
+    
+    // Remove 0x prefix and validate hex format
+    const hexStr = addressStr.slice(2);
+    if (!/^[0-9a-f]+$/.test(hexStr)) {
+        throw new Error('Địa chỉ flash chứa ký tự không hợp lệ. Chỉ được phép sử dụng 0-9, A-F');
+    }
+    
+    // Convert to integer
+    const address = parseInt(addressStr, 16);
+    
+    // Validate address range (should be reasonable for ESP32)
+    if (address < 0 || address > 0x400000) { // 4MB max
+        throw new Error('Địa chỉ flash không hợp lệ (0x0 - 0x400000)');
+    }
+    
+    // Check alignment (should be divisible by 4096 for flash sectors)
+    if (address % 4096 !== 0) {
+        log(`⚠️ Cảnh báo: Địa chỉ ${addressStr} không căn chỉnh với sector (4KB). Khuyến nghị sử dụng địa chỉ chia hết cho 0x1000`);
+    }
+    
+    return address;
+  }
+
 // File handling
 browseBtn.addEventListener('click', (e) => {
   e.preventDefault();
@@ -265,7 +351,7 @@ connectBtn.addEventListener('click', async () => {
     // Read flash ID to get accurate flash size
     log('Đang đọc thông tin flash memory...');
     try {
-        const flashId = await esploader.flash_id();
+        const flashId = await esploader.readFlashId();
         log(`Flash ID: 0x${flashId.toString(16).padStart(6, '0').toUpperCase()}`);
         
         // Extract flash size from flash ID
@@ -345,100 +431,6 @@ flashBtn.addEventListener('click', async () => {
           reader.readAsBinaryString(inputFile);
       });
   };
-
-  function getFlashSizeFromId(flashId) {
-      // Extract manufacturer ID (first byte)
-      const manufacturerId = (flashId >> 16) & 0xFF;
-      
-      // Extract device ID (second and third bytes)
-      const deviceId = flashId & 0xFFFF;
-      
-      // Extract capacity code (bits 16-19 of device ID)
-      const capacityCode = (deviceId >> 8) & 0x1F;
-      
-      // Get manufacturer name
-      const manufacturers = {
-          0x20: 'XMC (Micron)',
-          0x68: 'BOYA',
-          0x85: 'PUYA',
-          0x8C: 'ESMT',
-          0x9D: 'ISSI',
-          0xA1: 'Fudan Micro',
-          0xC2: 'MXIC',
-          0xC8: 'GigaDevice',
-          0xE0: 'Berg Micro',
-          0xEF: 'Winbond',
-          0xFF: 'Unknown'
-      };
-      
-      const manufacturerName = manufacturers[manufacturerId] || `Unknown (0x${manufacturerId.toString(16).toUpperCase()})`;
-      
-      // Calculate flash size from capacity code (JEDEC standard)
-      // Capacity = 2^(capacity_code) bytes
-      let flashSizeBytes = 0;
-      let flashSizeStr = 'Unknown';
-      
-      if (capacityCode >= 10 && capacityCode <= 28) {
-          flashSizeBytes = Math.pow(2, capacityCode);
-          
-          if (flashSizeBytes >= 1024 * 1024) {
-              flashSizeStr = `${(flashSizeBytes / (1024 * 1024)).toFixed(1)}MB`;
-          } else if (flashSizeBytes >= 1024) {
-              flashSizeStr = `${(flashSizeBytes / 1024).toFixed(1)}KB`;
-          } else {
-              flashSizeStr = `${flashSizeBytes}B`;
-          }
-          
-          // Common flash sizes validation
-          const commonSizes = [1, 2, 4, 8, 16, 32, 64, 128];
-          const sizeMB = flashSizeBytes / (1024 * 1024);
-          if (!commonSizes.includes(sizeMB)) {
-              flashSizeStr += ' (uncommon size)';
-          }
-      } else {
-          flashSizeStr = `Unknown (capacity code: 0x${capacityCode.toString(16).toUpperCase()})`;
-      }
-      
-      // Log detailed information
-      console.log(`Flash Analysis:
-          Manufacturer ID: 0x${manufacturerId.toString(16).toUpperCase()} (${manufacturerName})
-          Device ID: 0x${deviceId.toString(16).toUpperCase()}
-          Capacity Code: 0x${capacityCode.toString(16).toUpperCase()} (${capacityCode})
-          Calculated Size: ${flashSizeStr}`);
-      
-      return flashSizeStr;
-  }
-
-  function parseFlashAddress(addressStr) {
-    // Remove whitespace and convert to lowercase
-    addressStr = addressStr.trim().toLowerCase();
-    
-    // Check if it starts with 0x
-    if (!addressStr.startsWith('0x')) {
-        throw new Error('Địa chỉ flash phải bắt đầu bằng "0x" (ví dụ: 0x10000)');
-    }
-    
-    // Remove 0x prefix and validate hex format
-    const hexStr = addressStr.slice(2);
-    if (!/^[0-9a-f]+$/.test(hexStr)) {
-        throw new Error('Địa chỉ flash chứa ký tự không hợp lệ. Chỉ được phép sử dụng 0-9, A-F');
-    }
-    
-    // Convert to integer
-    const address = parseInt(addressStr, 16);
-    
-    // Validate address range (should be reasonable for ESP32)
-    if (address < 0 || address > 0x400000) { // 4MB max
-        throw new Error('Địa chỉ flash không hợp lệ (0x0 - 0x400000)');
-    }
-    
-    // Check alignment (should be divisible by 4096 for flash sectors)
-    if (address % 4096 !== 0) {
-        log(`⚠️ Cảnh báo: Địa chỉ ${addressStr} không căn chỉnh với sector (4KB). Khuyến nghị sử dụng địa chỉ chia hết cho 0x1000`);
-    }
-    
-    return address;
-  }
   
   try {
     log(`Bắt đầu nạp firmware: ${selectedFile.name}`);
