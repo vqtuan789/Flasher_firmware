@@ -112,10 +112,10 @@ body {
     overflow-y: auto;
   }
   
-  /* Make log terminal taller on wide screens */
+  /* Allow log terminal height to be controlled by JS on wide screens */
   .log-terminal {
-    min-height: 280px;
-    max-height: 350px;
+    min-height: 200px;
+    max-height: none;
   }
 }
 
@@ -618,14 +618,14 @@ h3, .h5 {
   }
   
   .log-terminal {
-    height: 320px !important;
+    min-height: 200px;
   }
 }
 
 /* Large Desktop */
 @media (min-width: 1200px) and (max-width: 1399px) {
   .log-terminal {
-    height: 300px !important;
+    min-height: 200px;
   }
   
   .firmware-info {
@@ -640,7 +640,7 @@ h3, .h5 {
   }
   
   .log-terminal {
-    height: 250px !important;
+    min-height: 200px;
   }
 }
 

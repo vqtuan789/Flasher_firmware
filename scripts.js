@@ -283,6 +283,55 @@ function populateFirmwareList() {
     });
 }
 
+// Synchronize log terminal height with left column content
+function syncLogHeight() {
+    // Only apply on desktop screens (xl and above)
+    if (window.innerWidth >= 1200) {
+        const leftColumn = document.querySelector('.col-xl-5');
+        const rightColumn = document.querySelector('.col-xl-7');
+        const logTerminal = document.getElementById('log');
+        
+        if (leftColumn && rightColumn && logTerminal) {
+            // Get the height of left column content
+            const leftHeight = leftColumn.offsetHeight;
+            
+            // Get right column elements above log terminal
+            const rightColumnElements = rightColumn.children;
+            let elementsHeight = 0;
+            
+            // Calculate height of all elements above log terminal
+            for (let i = 0; i < rightColumnElements.length; i++) {
+                const element = rightColumnElements[i];
+                if (element.contains(logTerminal)) {
+                    // This is the log section, calculate remaining height
+                    const logSection = element;
+                    const logHeader = logSection.querySelector('.h5');
+                    
+                    // Calculate available height for log terminal
+                    const availableHeight = leftHeight - elementsHeight - (logHeader ? logHeader.offsetHeight + 16 : 40) - 20; // 20px margin
+                    
+                    // Set minimum and maximum constraints
+                    const minHeight = 200;
+                    const maxHeight = 500;
+                    const finalHeight = Math.max(minHeight, Math.min(maxHeight, availableHeight));
+                    
+                    logTerminal.style.height = finalHeight + 'px';
+                    break;
+                } else {
+                    // Add up heights of elements above log terminal
+                    elementsHeight += element.offsetHeight + 24; // 24px for mb-3 margin
+                }
+            }
+        }
+    } else {
+        // Reset height for smaller screens
+        const logTerminal = document.getElementById('log');
+        if (logTerminal) {
+            logTerminal.style.height = '';
+        }
+    }
+}
+
 function showFirmwareInfo(firmware) {
     const firmwareInfo = document.getElementById('firmwareInfo');
     const firmwareName = document.getElementById('firmwareName');
@@ -302,6 +351,10 @@ function showFirmwareInfo(firmware) {
     
     if (!firmware) {
         firmwareInfo.classList.add('d-none');
+        // Sync log height when firmware info is hidden
+        setTimeout(() => {
+            syncLogHeight();
+        }, 100);
         return;
     }
     
@@ -359,6 +412,11 @@ function showFirmwareInfo(firmware) {
     flashAddressInput.dispatchEvent(new Event('input'));
     
     firmwareInfo.classList.remove('d-none');
+    
+    // Sync log height after firmware info is displayed
+    setTimeout(() => {
+        syncLogHeight();
+    }, 100); // Small delay to ensure DOM is updated
 }
 
 async function downloadFirmware(firmware) {
@@ -881,4 +939,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     // Load firmware database
     await loadFirmwareDatabase();
+    
+    // Initial sync log height
+    setTimeout(() => {
+        syncLogHeight();
+    }, 500);
+});
+
+// Window resize event listener to sync log height
+window.addEventListener('resize', () => {
+    // Debounce resize events
+    clearTimeout(window.resizeTimeout);
+    window.resizeTimeout = setTimeout(() => {
+        syncLogHeight();
+    }, 250);
 });
