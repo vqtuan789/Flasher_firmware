@@ -112,9 +112,9 @@ body {
     overflow-y: auto;
   }
   
-  /* Allow log terminal height to be controlled by JS on wide screens */
+  /* Allow log terminal height to be controlled by JS on wide screens - make it taller */
   .log-terminal {
-    min-height: 200px;
+    min-height: 320px;
     max-height: none;
   }
 }
@@ -618,14 +618,14 @@ h3, .h5 {
   }
   
   .log-terminal {
-    min-height: 200px;
+    min-height: 350px;
   }
 }
 
 /* Large Desktop */
 @media (min-width: 1200px) and (max-width: 1399px) {
   .log-terminal {
-    min-height: 200px;
+    min-height: 320px;
   }
   
   .firmware-info {
@@ -640,7 +640,7 @@ h3, .h5 {
   }
   
   .log-terminal {
-    min-height: 200px;
+    min-height: 280px;
   }
 }
 
@@ -655,7 +655,7 @@ h3, .h5 {
   }
 
   .log-terminal {
-    height: 220px !important;
+    min-height: 250px;
   }
   
   /* Single column layout for tablets */
@@ -694,7 +694,7 @@ h3, .h5 {
   }
 
   .log-terminal {
-    height: 200px !important;
+    min-height: 220px;
     font-size: 0.8rem;
     padding: 0.75rem;
   }

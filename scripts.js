@@ -308,17 +308,18 @@ function syncLogHeight() {
                     const logHeader = logSection.querySelector('.h5');
                     
                     // Calculate available height for log terminal
+                    // Account for flash controls that are now in right column
                     const availableHeight = leftHeight - elementsHeight - (logHeader ? logHeader.offsetHeight + 16 : 40) - 20; // 20px margin
                     
-                    // Set minimum and maximum constraints
-                    const minHeight = 200;
-                    const maxHeight = 500;
+                    // Set minimum and maximum constraints (increased for better visibility)
+                    const minHeight = 250;
+                    const maxHeight = 600;
                     const finalHeight = Math.max(minHeight, Math.min(maxHeight, availableHeight));
                     
                     logTerminal.style.height = finalHeight + 'px';
                     break;
                 } else {
-                    // Add up heights of elements above log terminal
+                    // Add up heights of elements above log terminal (now includes flash controls)
                     elementsHeight += element.offsetHeight + 24; // 24px for mb-3 margin
                 }
             }

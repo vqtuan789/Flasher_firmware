@@ -109,9 +109,12 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
 
+                    <!-- Right Column: Controls, Progress, Log & Actions -->
+                    <div class="col-12 col-xl-7">
                         <!-- Flash Controls Section -->
-                        <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+                        <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
                             <div class="d-flex align-items-center gap-2">
                                 <label for="flashAddress" class="form-label mb-0 fw-semibold text-muted small">
                                     <i class="bi bi-geo-alt me-1"></i>Địa chỉ flash:
@@ -125,18 +128,12 @@
                             <button id="eraseBtn" class="btn btn-outline-warning btn-lg" disabled>
                                 <i class="bi bi-trash me-2"></i>Xoá Flash
                             </button>
-                        </div>
-
-                        <!-- Chip Info -->
-                        <div class="mb-3">
-                            <div id="chipInfo" class="badge bg-secondary fs-6 py-2 px-3 w-100 text-start">
-                                <span class="status-indicator status-disconnected"></span>Chưa kết nối
+                            <div class="ms-auto">
+                                <div id="chipInfo" class="badge bg-secondary fs-6 py-2 px-3">
+                                    <span class="status-indicator status-disconnected"></span>Chưa kết nối
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Right Column: Progress, Log & Controls -->
-                    <div class="col-12 col-xl-7">
                         <!-- Flash Status Notification -->
                         <div id="flashStatusNotification" class="alert alert-info d-none mb-3" role="alert">
                             <div class="d-flex align-items-center">
