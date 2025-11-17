@@ -95,9 +95,9 @@
     {
       "id": "xingzhi-cube-1.54tft-wifi_music_radio_v2.0.4",
       "name": "Xingzhi Cube 1.54 TFT WiFi Music-Radio V2.0.4",
-      "filename": "xingzhi-cube-1.54tft-wifi_music_radio_v2.0.4.bin",
+      "filename": "xingzhi-cube-1.54tft-wifi_music_radio_v2.0.4_20251118.bin",
       "flashAddress": "0x00000",
-      "path": "https://cdn.jsdelivr.net/gh/TienHuyIoT/esp_web_flasher@master/samples/xingzhi-cube-1.54tft-wifi_music_radio_v2.0.4.bin",
+      "path": "https://cdn.jsdelivr.net/gh/TienHuyIoT/esp_web_flasher@master/samples/xingzhi-cube-1.54tft-wifi_music_radio_v2.0.4_20251118.bin",
       "description": "18/11/2025 Firmware board Xingzhi Cube 1.54 TFT WiFi Music Radio Việt Nam; wake word: Sophia",
       "size": "9,748KB",
       "version": "2.0.4",
