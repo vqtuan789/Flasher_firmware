@@ -59,42 +59,8 @@
       }
     },
     {
-      "id": "xingzhi-cube-1.54tft-wifi_music_v2.0.4",
-      "name": "Xingzhi Cube 1.54 TFT WiFi Music V2.0.4",
-      "filename": "xingzhi-cube-1.54tft-wifi_music_v2.0.4.bin",
-      "flashAddress": "0x00000",
-      "path": "https://cdn.jsdelivr.net/gh/TienHuyIoT/esp_web_flasher@master/samples/xingzhi-cube-1.54tft-wifi_music_v2.0.4.bin",
-      "description": "Firmware board Xingzhi Cube 1.54 TFT WiFi Music Việt Nam; wake word: Sophia",
-      "size": "10,032KB",
-      "version": "2.0.4",
-      "category": "AI Xiaozhi",
-      "note": "Chỉ dành cho ESP32-S3 module",
-      "hardware_version": "ESP32-S3",
-      "hardware_info": {
-        "chip": "ESP32-S3",
-        "flash_size": "16MB",
-        "compatible_boards": ["xingzhi-cube-1.54tft-wifi"],
-        "minimum_requirements": {
-          "flash": "8MB",
-          "ram": "512KB",
-          "psram": "2MB"
-        },
-        "gpio_requirements": [
-          "I2S for audio output",
-          "SPI for TFT display",
-          "GPIO for touch buttons",
-          "UART for debugging"
-        ],
-        "power_requirements": "5V via USB",
-        "special_features": [
-          "Built-in TFT display (240x240)",
-          "Audio codec support"
-        ]
-      }
-    },
-    {
       "id": "xingzhi-cube-1.54tft-wifi_music_radio_v2.0.4",
-      "name": "Xingzhi Cube 1.54 TFT WiFi Music-Radio V2.0.4",
+      "name": "Xingzhi Cube 1.54 TFT Music-Radio V2.0.4",
       "filename": "xingzhi-cube-1.54tft-wifi_music_radio_v2.0.4_20251118.bin",
       "flashAddress": "0x00000",
       "path": "https://cdn.jsdelivr.net/gh/TienHuyIoT/esp_web_flasher@master/samples/xingzhi-cube-1.54tft-wifi_music_radio_v2.0.4_20251118.bin",
@@ -127,14 +93,14 @@
       }
     },
     {
-      "id": "xingzhi-cube-1.54tft-wifi_music_radio_v2.0.5.02",
-      "name": "Xingzhi Cube 1.54 TFT WiFi Music-Radio V2.0.5.02 (OTA supported)",
+      "id": "xingzhi-cube-1.54tft-wifi_music_radio_ota_v2.0.5.02",
+      "name": "Xingzhi Cube Music-Radio-OTA V2.0.5.02",
       "filename": "xingzhi-cube-1.54tft-wifi_music_radio_ota_v2.0.5.02.bin",
       "flashAddress": "0x00000",
       "path": "https://cdn.jsdelivr.net/gh/TienHuyIoT/esp_web_flasher@master/samples/xingzhi-cube-1.54tft-wifi_music_radio_ota_v2.0.5.02.bin",
       "description": "20/11/2025 Firmware board Xingzhi Cube 1.54 TFT WiFi Music Radio Việt Nam; wake word: Sophia",
       "size": "9,748KB",
-      "version": "2.0.5",
+      "version": "2.0.5.02",
       "category": "AI Xiaozhi",
       "note": "Chỉ dành cho ESP32-S3 module",
       "hardware_version": "ESP32-S3",
@@ -155,9 +121,8 @@
         ],
         "power_requirements": "5V via USB",
         "special_features": [
-          "Built-in TFT display (240x240)",
-          "Audio codec support",
-          "OTA Support"
+          "OTA link: https://ota-server.xiaozhi-ota.workers.dev/ota/",
+          "Built-in TFT display (240x240)"
         ]
       }
     }
