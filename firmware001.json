@@ -1,0 +1,147 @@
+{
+  "firmwareList": [
+    {
+      "id": "esp32_deep_sleep",
+      "name": "ESP32 Deep Sleep Demo",
+      "filename": "deep_sleep_demo.bin",
+      "flashAddress": "0x10000",
+      "path": "local://samples/deep_sleep_demo.bin",
+      "description": "Demo chế độ deep sleep để tiết kiệm pin - thức dậy bằng timer hoặc GPIO ",
+      "size": "198KB",
+      "version": "1.3.1",
+      "category": "Power Management",
+      "note": "Phù hợp cho ESP32 module và board phát triển",
+      "hardware_version": "ESP32",
+      "hardware_info": {
+        "chip": "ESP32",
+        "flash_size": "4MB",
+        "compatible_boards": ["ESP32 DevKit", "ESP32 WROOM", "ESP32 NodeMCU"],
+        "minimum_requirements": {
+          "flash": "1MB",
+          "ram": "320KB"
+        },
+        "gpio_requirements": ["GPIO2 for LED", "GPIO0 for wake-up button"],
+        "power_requirements": "3.3V, low power design"
+      }
+    },
+    {
+      "id": "bread-compact-wifi_music_v2.0.4",
+      "name": "bread-compact-wifi Music (Board TÍM OLED) V2.0.4",
+      "filename": "bread-compact-wifi_music_v2.0.4.bin",
+      "flashAddress": "0x00000",
+      "path": "https://cdn.jsdelivr.net/gh/TienHuyIoT/esp_web_flasher@master/samples/bread-compact-wifi_music_v2.0.4.bin",
+      "description": "Firmware board TÍM OLED AI Xiaozhi Music Việt Nam; wake word: Sophia",
+      "size": "8,743KB",
+      "version": "2.0.4",
+      "category": "AI Xiaozhi",
+      "note": "Chỉ dành cho ESP32-S3 module",
+      "hardware_version": "ESP32-S3",
+      "hardware_info": {
+        "chip": "ESP32-S3",
+        "flash_size": "16MB",
+        "compatible_boards": ["bread-compact-wifi"],
+        "minimum_requirements": {
+          "flash": "8MB",
+          "ram": "512KB",
+          "psram": "2MB"
+        },
+        "gpio_requirements": [
+          "I2S for audio output",
+          "I2C for OLED display",
+          "GPIO for touch buttons",
+          "UART for debugging"
+        ],
+        "power_requirements": "5V via USB",
+        "special_features": [
+          "Built-in OLED display (128x64)",
+          "Audio codec support"
+        ]
+      }
+    },
+    {
+      "id": "xingzhi-cube-1.54tft-wifi_music_radio_v2.0.4",
+      "name": "Xingzhi Cube 1.54 TFT Music-Radio V2.0.4",
+      "filename": "xingzhi-cube-1.54tft-wifi_music_radio_v2.0.4_20251118.bin",
+      "flashAddress": "0x00000",
+      "path": "https://cdn.jsdelivr.net/gh/TienHuyIoT/esp_web_flasher@master/samples/xingzhi-cube-1.54tft-wifi_music_radio_v2.0.4_20251118.bin",
+      "description": "18/11/2025 Firmware board Xingzhi Cube 1.54 TFT WiFi Music Radio Việt Nam; wake word: Sophia",
+      "size": "9,748KB",
+      "version": "2.0.4",
+      "category": "AI Xiaozhi",
+      "note": "Chỉ dành cho ESP32-S3 module",
+      "hardware_version": "ESP32-S3",
+      "hardware_info": {
+        "chip": "ESP32-S3",
+        "flash_size": "16MB",
+        "compatible_boards": ["xingzhi-cube-1.54tft-wifi"],
+        "minimum_requirements": {
+          "flash": "8MB",
+          "ram": "512KB",
+          "psram": "2MB"
+        },
+        "gpio_requirements": [
+          "I2S for audio output",
+          "SPI for TFT display",
+          "GPIO for touch buttons",
+          "UART for debugging"
+        ],
+        "power_requirements": "5V via USB",
+        "special_features": [
+          "Built-in TFT display (240x240)",
+          "Audio codec support"
+        ]
+      }
+    },
+    {
+      "id": "xingzhi-cube-1.54tft-wifi_music_radio_ota_v2.0.5.02",
+      "name": "Xingzhi Cube Music-Radio-OTA V2.0.5_02",
+      "filename": "xingzhi-cube-1.54tft-wifi_music_radio_ota_v2.0.5.02.bin",
+      "flashAddress": "0x00000",
+      "path": "https://cdn.jsdelivr.net/gh/TienHuyIoT/esp_web_flasher@master/samples/xingzhi-cube-1.54tft-wifi_music_radio_ota_v2.0.5.02.bin",
+      "description": "20/11/2025 Firmware board Xingzhi Cube 1.54 TFT WiFi Music Radio Việt Nam; wake word: Sophia",
+      "size": "9,748KB",
+      "version": "2.0.5.02",
+      "category": "AI Xiaozhi",
+      "note": "Chỉ dành cho ESP32-S3 module",
+      "hardware_version": "ESP32-S3",
+      "hardware_info": {
+        "chip": "ESP32-S3",
+        "flash_size": "16MB",
+        "compatible_boards": ["xingzhi-cube-1.54tft-wifi"],
+        "minimum_requirements": {
+          "flash": "8MB",
+          "ram": "512KB",
+          "psram": "2MB"
+        },
+        "gpio_requirements": [
+          "I2S for audio output",
+          "SPI for TFT display",
+          "GPIO for touch buttons",
+          "UART for debugging"
+        ],
+        "power_requirements": "5V via USB",
+        "special_features": [
+          "OTA link: https://ota-server.xiaozhi-ota.workers.dev/ota/",
+          "Built-in TFT display (240x240)"
+        ]
+      }
+    }
+  ],
+  "categories": [
+    "AI Xiaozhi",
+    "Basic Examples",
+    "WiFi Examples", 
+    "Web Examples",
+    "IoT Examples",
+    "Bluetooth Examples",
+    "BLE Examples",
+    "Power Management",
+    "Camera Examples"
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-11-08",
+    "description": "ESP32 firmware collection for web flasher",
+    "author": "TienHuyIoT"
+  }
+}
