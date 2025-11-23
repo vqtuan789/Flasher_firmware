@@ -218,7 +218,7 @@ function getFlashSizeFromId(flashId) {
 async function loadFirmwareDatabase() {
     try {
         log('Đang tải danh sách firmware...');
-        const response = await fetch('./firmware.json');
+        const response = await fetch('./firmware001.json');
         
         if (!response.ok) {
             throw new Error(`HTTP ${response.status}: ${response.statusText}`);
