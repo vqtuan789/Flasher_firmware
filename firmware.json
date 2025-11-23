@@ -25,21 +25,21 @@
       }
     },
     {
-      "id": "bread-compact-wifi_music_v2.0.4",
-      "name": "bread-compact-wifi Music (Board TÍM OLED) V2.0.4",
-      "filename": "bread-compact-wifi_music_v2.0.4.bin",
+      "id": "compact_wifi_board_lcd_240x240",
+      "name": "compact_wifi_board_lcd_240x240",
+      "filename": "compact_wifi_board_lcd_240x240.bin",
       "flashAddress": "0x00000",
-      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/bread-compact-wifi_music_v2.0.4.bin",
-      "description": "Firmware board TÍM OLED AI Xiaozhi Music Việt Nam; wake word: Sophia",
-      "size": "8,743KB",
-      "version": "2.0.4",
+      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/compact_wifi_board_lcd_240x240.bin",
+      "description": "Firmware board TÍM AI Xiaozhi Music Việt Nam; wake word: Hi LiLy",
+      "size": "9,351KB",
+      "version": "2.0.5.04",
       "category": "AI Xiaozhi",
-      "note": "Chỉ dành cho ESP32-S3 module",
+      "note": "Chỉ dành cho ESP32-S3 N16R8 module",
       "hardware_version": "ESP32-S3",
       "hardware_info": {
         "chip": "ESP32-S3",
         "flash_size": "16MB",
-        "compatible_boards": ["bread-compact-wifi"],
+        "compatible_boards": ["compact_wifi_board_lcd"],
         "minimum_requirements": {
           "flash": "8MB",
           "ram": "512KB",
@@ -53,7 +53,109 @@
         ],
         "power_requirements": "5V via USB",
         "special_features": [
-          "Built-in OLED display (128x64)",
+          "Built-in LCD display (240x240)",
+          "Audio codec support"
+        ]
+      }
+    },
+        {
+      "id": "compact_wifi_board_lcd_ST7789_240x320",
+      "name": "compact_wifi_board_lcd_ST7789_240x320",
+      "filename": "compact_wifi_board_lcd_ST7789_240x320.bin",
+      "flashAddress": "0x00000",
+      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/compact_wifi_board_lcd_ST7789_240x320.bin",
+      "description": "Firmware board TÍM AI Xiaozhi Music Việt Nam; wake word: Hi LiLy",
+      "size": "9,351KB",
+      "version": "2.0.5.04",
+      "category": "AI Xiaozhi",
+      "note": "Chỉ dành cho ESP32-S3 N16R8 module",
+      "hardware_version": "ESP32-S3",
+      "hardware_info": {
+        "chip": "ESP32-S3",
+        "flash_size": "16MB",
+        "compatible_boards": ["compact_wifi_board_lcd"],
+        "minimum_requirements": {
+          "flash": "8MB",
+          "ram": "512KB",
+          "psram": "2MB"
+        },
+        "gpio_requirements": [
+          "I2S for audio output",
+          "I2C for OLED display",
+          "GPIO for touch buttons",
+          "UART for debugging"
+        ],
+        "power_requirements": "5V via USB",
+        "special_features": [
+          "Built-in LCD display (240x320)",
+          "Audio codec support"
+        ]
+      }
+    },
+        {
+      "id": "compact_wifi_board_lcd_GC9A01_240x240_Tron",
+      "name": "compact_wifi_board_lcd_GC9A01_240x240_Tron",
+      "filename": "compact_wifi_board_lcd_GC9A01_240x240_Tron.bin",
+      "flashAddress": "0x00000",
+      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/compact_wifi_board_lcd_GC9A01_240x240_Tron.bin",
+      "description": "Firmware board TÍM AI Xiaozhi Music Việt Nam; wake word: Hi LiLy",
+      "size": "9,351KB",
+      "version": "2.0.5.04",
+      "category": "AI Xiaozhi",
+      "note": "Chỉ dành cho ESP32-S3 N16R8 module",
+      "hardware_version": "ESP32-S3",
+      "hardware_info": {
+        "chip": "ESP32-S3",
+        "flash_size": "16MB",
+        "compatible_boards": ["compact_wifi_board_lcd"],
+        "minimum_requirements": {
+          "flash": "8MB",
+          "ram": "512KB",
+          "psram": "2MB"
+        },
+        "gpio_requirements": [
+          "I2S for audio output",
+          "I2C for OLED display",
+          "GPIO for touch buttons",
+          "UART for debugging"
+        ],
+        "power_requirements": "5V via USB",
+        "special_features": [
+          "Built-in LCD display (240x240)",
+          "Audio codec support"
+        ]
+      }
+    },
+        {
+      "id": "compact_wifi_board_lcd_ST7789_240x240",
+      "name": "compact_wifi_board_lcd_ST7789_240x240",
+      "filename": "compact_wifi_board_lcd_ST7789_240x240.bin",
+      "flashAddress": "0x00000",
+      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/compact_wifi_board_lcd_ST7789_240x240.bin",
+      "description": "Firmware board TÍM AI Xiaozhi Music Việt Nam; wake word: Hi LiLy",
+      "size": "9,351KB",
+      "version": "2.0.5.04",
+      "category": "AI Xiaozhi",
+      "note": "Chỉ dành cho ESP32-S3 N16R8 module",
+      "hardware_version": "ESP32-S3",
+      "hardware_info": {
+        "chip": "ESP32-S3",
+        "flash_size": "16MB",
+        "compatible_boards": ["compact_wifi_board_lcd"],
+        "minimum_requirements": {
+          "flash": "8MB",
+          "ram": "512KB",
+          "psram": "2MB"
+        },
+        "gpio_requirements": [
+          "I2S for audio output",
+          "I2C for OLED display",
+          "GPIO for touch buttons",
+          "UART for debugging"
+        ],
+        "power_requirements": "5V via USB",
+        "special_features": [
+          "Built-in LCD display (240x240)",
           "Audio codec support"
         ]
       }
