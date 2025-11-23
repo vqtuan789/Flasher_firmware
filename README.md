@@ -2,7 +2,7 @@
 
 A web-based tool for flashing firmware to ESP32 microcontrollers directly from your browser using the Web Serial API.
 
-Have a look: [ESP32 Web Flasher](https://tienhuyiot.github.io/esp_web_flasher/)
+Have a look: [ESP32 Web Flasher](https://vqtuan789.github.io/Flasher_firmware/)
 
 ## Features
 
