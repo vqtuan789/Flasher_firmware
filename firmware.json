@@ -220,7 +220,7 @@
           "Built-in TFT display (240x240)"
         ]
       }
-    }
+    },
     { "id": "xingzhi-cube-1.54tft-wifi",
      "name": "xingzhi-cube-1.54tft-wifi",
      "filename": "xingzhi-cube-1.54tft-wifi.bin",
