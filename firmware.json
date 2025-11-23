@@ -1,7 +1,6 @@
 {
   "firmwareList": [
-    {
-      "id": "esp32_deep_sleep",
+    { "id": "esp32_deep_sleep",
       "name": "ESP32 Deep Sleep Demo",
       "filename": "deep_sleep_demo.bin",
       "flashAddress": "0x10000",
@@ -24,8 +23,7 @@
         "power_requirements": "3.3V, low power design"
       }
     },
-    {
-      "id": "compact_wifi_board_lcd_240x240",
+    { "id": "compact_wifi_board_lcd_240x240",
       "name": "compact_wifi_board_lcd_240x240",
       "filename": "compact_wifi_board_lcd_240x240.bin",
       "flashAddress": "0x00000",
@@ -58,8 +56,7 @@
         ]
       }
     },
-        {
-      "id": "compact_wifi_board_lcd_ST7789_240x320",
+    { "id": "compact_wifi_board_lcd_ST7789_240x320",
       "name": "compact_wifi_board_lcd_ST7789_240x320",
       "filename": "compact_wifi_board_lcd_ST7789_240x320.bin",
       "flashAddress": "0x00000",
@@ -92,8 +89,7 @@
         ]
       }
     },
-        {
-      "id": "compact_wifi_board_lcd_GC9A01_240x240_Tron",
+    { "id": "compact_wifi_board_lcd_GC9A01_240x240_Tron",
       "name": "compact_wifi_board_lcd_GC9A01_240x240_Tron",
       "filename": "compact_wifi_board_lcd_GC9A01_240x240_Tron.bin",
       "flashAddress": "0x00000",
@@ -126,8 +122,7 @@
         ]
       }
     },
-        {
-      "id": "compact_wifi_board_lcd_ST7789_240x240",
+    { "id": "compact_wifi_board_lcd_ST7789_240x240",
       "name": "compact_wifi_board_lcd_ST7789_240x240",
       "filename": "compact_wifi_board_lcd_ST7789_240x240.bin",
       "flashAddress": "0x00000",
@@ -160,8 +155,7 @@
         ]
       }
     },
-      {
-      "id": "xingzhi-cube-1.54tft-wifi_music_radio_v2.0.4",
+    { "id": "xingzhi-cube-1.54tft-wifi_music_radio_v2.0.4",
       "name": "Xingzhi Cube 1.54 TFT Music-Radio V2.0.4",
       "filename": "xingzhi-cube-1.54tft-wifi_music_radio_v2.0.4_20251118.bin",
       "flashAddress": "0x00000",
@@ -194,8 +188,7 @@
         ]
       }
     },
-    {
-      "id": "xingzhi-cube-1.54tft-wifi_music_radio_ota_v2.0.5.02",
+    { "id": "xingzhi-cube-1.54tft-wifi_music_radio_ota_v2.0.5.02",
       "name": "Xingzhi Cube Music-Radio-OTA V2.0.5.02",
       "filename": "xingzhi-cube-1.54tft-wifi_music_radio_ota_v2.0.5.02.bin",
       "flashAddress": "0x00000",
@@ -228,6 +221,172 @@
         ]
       }
     }
+    { "id": "xingzhi-cube-1.54tft-wifi",
+     "name": "xingzhi-cube-1.54tft-wifi",
+     "filename": "xingzhi-cube-1.54tft-wifi.bin",
+     "flashAddress": "0x00000",
+     "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/xingzhi-cube-1.54tft-wifi.bin",
+     "description": "Firmware XingZhi Cube AI Xiaozhi Music Việt Nam; wake word: Hi LiLy",
+     "size": "9,748KB",
+     "version": "2.0.5.04",
+     "category": "AI Xiaozhi",
+     "note": "Chỉ dành cho ESP32-S3 N16R8",
+     "hardware_version": "ESP32-S3 N16R8",
+     "hardware_info": {
+      "chip": "ESP32-S3 N16R8",
+      "flash_size": "16MB",
+      "compatible_boards": ["xingzhi-cube-1.54tft-wifi"],
+      "minimum_requirements": {
+        "flash": "8MB",
+        "ram": "512KB",
+        "psram": "2MB"
+      },
+      "gpio_requirements": [
+        "I2S for audio output",
+        "I2C for OLED display",
+        "GPIO for touch buttons",
+        "UART for debugging"
+      ],
+      "power_requirements": "5V via USB",
+      "special_features": [
+        "Built-in LCD display (240x240)",
+        "Audio codec support"
+      ]
+     }
+    },
+    {"id": "xingzhi-cube-1.54tft-wifi_Wechat",
+     "name": "xingzhi-cube-1.54tft-wifi_Wechat",
+     "filename": "xingzhi-cube-1.54tft-wifi_Wechat.bin",
+     "flashAddress": "0x00000",
+     "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/xingzhi-cube-1.54tft-wifi_Wechat.bin",
+     "description": "Firmware XingZhi Cube AI Xiaozhi Music Việt Nam; wake word: Hi LiLy",
+     "size": "9,748KB",
+     "version": "2.0.5.04",
+     "category": "AI Xiaozhi",
+     "note": "Chỉ dành cho ESP32-S3 N16R8",
+     "hardware_version": "ESP32-S3 N16R8",
+     "hardware_info": {
+      "chip": "ESP32-S3 N16R8",
+      "flash_size": "16MB",
+      "compatible_boards": ["xingzhi-cube-1.54tft-wifi"],
+      "minimum_requirements": {
+        "flash": "8MB",
+        "ram": "512KB",
+        "psram": "2MB"
+      },
+      "gpio_requirements": [
+        "I2S for audio output",
+        "I2C for OLED display",
+        "GPIO for touch buttons",
+        "UART for debugging"
+      ],
+      "power_requirements": "5V via USB",
+      "special_features": [
+        "Built-in LCD display (240x240)",
+        "Audio codec support"
+      ]
+     }
+    },
+    {"id": "BoTim_compact_wifi_board_lcd_GC9A01_240x240_Tron",
+     "name": "BoTim_compact_wifi_board_lcd_GC9A01_240x240_Tron",
+     "filename": "BoTim_compact_wifi_board_lcd_GC9A01_240x240_Tron.bin",
+     "flashAddress": "0x00000",
+     "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/BoTim_compact_wifi_board_lcd_GC9A01_240x240_Tron.bin",
+     "description": "Firmware board TÍM huyền thoại AI Xiaozhi Music Việt Nam; wake word: Hi LiLy",
+     "size": "9,351KB",
+     "version": "2.0.5.04",
+     "category": "AI Xiaozhi",
+     "note": "Chỉ dành cho ESP32-S3 N16R8 module main Tím",
+     "hardware_version": "XH-S3E-AI_V1.0 & V2.0",
+     "hardware_info": {
+      "chip": "ESP32-S3 XH-S3E",
+      "flash_size": "16MB",
+      "compatible_boards": ["compact_wifi_board_lcd"],
+      "minimum_requirements": {
+        "flash": "8MB",
+        "ram": "512KB",
+        "psram": "2MB"
+      },
+      "gpio_requirements": [
+        "I2S for audio output",
+        "I2C for OLED display",
+        "GPIO for touch buttons",
+        "UART for debugging"
+      ],
+      "power_requirements": "5V via USB",
+      "special_features": [
+        "Built-in LCD display (240x240)",
+        "Audio codec support"
+      ]
+     }
+    },
+    {"id": "BoTim_compact_wifi_board_lcd_ST7789_240x240",
+     "name": "BoTim_compact_wifi_board_lcd_ST7789_240x240",
+     "filename": "BoTim_compact_wifi_board_lcd_ST7789_240x240.bin",
+     "flashAddress": "0x00000",
+     "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/BoTim_compact_wifi_board_lcd_ST7789_240x240.bin",
+     "description": "Firmware board TÍM huyền thoại AI Xiaozhi Music Việt Nam; wake word: Hi LiLy",
+     "size": "9,351KB",
+     "version": "2.0.5.04",
+     "category": "AI Xiaozhi",
+     "note": "Chỉ dành cho ESP32-S3 N16R8 module main Tím",
+     "hardware_version": "XH-S3E-AI_V1.0 & V2.0",
+     "hardware_info": {
+      "chip": "ESP32-S3 XH-S3E",
+      "flash_size": "16MB",
+      "compatible_boards": ["compact_wifi_board_lcd"],
+      "minimum_requirements": {
+        "flash": "8MB",
+        "ram": "512KB",
+        "psram": "2MB"
+      },
+      "gpio_requirements": [
+        "I2S for audio output",
+        "I2C for OLED display",
+        "GPIO for touch buttons",
+        "UART for debugging"
+      ],
+      "power_requirements": "5V via USB",
+      "special_features": [
+        "Built-in LCD display (240x240)",
+        "Audio codec support"
+      ]
+     }
+    },
+    {"id": "BoTim_compact_wifi_board_lcd_ST7789_240x320",
+     "name": "BoTim_compact_wifi_board_lcd_ST7789_240x320",
+     "filename": "BoTim_compact_wifi_board_lcd_ST7789_240x320.bin",
+     "flashAddress": "0x00000",
+     "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/BoTim_compact_wifi_board_lcd_ST7789_240x320.bin",
+     "description": "Firmware board TÍM huyền thoại AI Xiaozhi Music Việt Nam; wake word: Hi LiLy",
+     "size": "9,351KB",
+     "version": "2.0.5.04",
+     "category": "AI Xiaozhi",
+     "note": "Chỉ dành cho ESP32-S3 N16R8 module main Tím",
+     "hardware_version": "XH-S3E-AI_V1.0 & V2.0",
+     "hardware_info": {
+      "chip": "ESP32-S3 XH-S3E",
+      "flash_size": "16MB",
+      "compatible_boards": ["compact_wifi_board_lcd"],
+      "minimum_requirements": {
+        "flash": "8MB",
+        "ram": "512KB",
+        "psram": "2MB"
+      },
+      "gpio_requirements": [
+        "I2S for audio output",
+        "I2C for OLED display",
+        "GPIO for touch buttons",
+        "UART for debugging"
+      ],
+      "power_requirements": "5V via USB",
+      "special_features": [
+        "Built-in LCD display (240x320)",
+        "Audio codec support"
+      ]
+     }
+    },
+
   ],
   "categories": [
     "AI Xiaozhi",
