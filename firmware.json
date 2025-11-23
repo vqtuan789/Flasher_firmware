@@ -254,7 +254,7 @@
       ]
      }
     },
-    {"id": "xingzhi-cube-1.54tft-wifi_Wechat",
+    { "id": "xingzhi-cube-1.54tft-wifi_Wechat",
      "name": "xingzhi-cube-1.54tft-wifi_Wechat",
      "filename": "xingzhi-cube-1.54tft-wifi_Wechat.bin",
      "flashAddress": "0x00000",
@@ -287,7 +287,7 @@
       ]
      }
     },
-    {"id": "BoTim_compact_wifi_board_lcd_GC9A01_240x240_Tron",
+    { "id": "BoTim_compact_wifi_board_lcd_GC9A01_240x240_Tron",
      "name": "BoTim_compact_wifi_board_lcd_GC9A01_240x240_Tron",
      "filename": "BoTim_compact_wifi_board_lcd_GC9A01_240x240_Tron.bin",
      "flashAddress": "0x00000",
@@ -320,7 +320,7 @@
       ]
      }
     },
-    {"id": "BoTim_compact_wifi_board_lcd_ST7789_240x240",
+    { "id": "BoTim_compact_wifi_board_lcd_ST7789_240x240",
      "name": "BoTim_compact_wifi_board_lcd_ST7789_240x240",
      "filename": "BoTim_compact_wifi_board_lcd_ST7789_240x240.bin",
      "flashAddress": "0x00000",
@@ -353,7 +353,7 @@
       ]
      }
     },
-    {"id": "BoTim_compact_wifi_board_lcd_ST7789_240x320",
+    { "id": "BoTim_compact_wifi_board_lcd_ST7789_240x320",
      "name": "BoTim_compact_wifi_board_lcd_ST7789_240x320",
      "filename": "BoTim_compact_wifi_board_lcd_ST7789_240x320.bin",
      "flashAddress": "0x00000",
@@ -386,7 +386,6 @@
       ]
      }
     },
-
   ],
   "categories": [
     "AI Xiaozhi",
