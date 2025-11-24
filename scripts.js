@@ -349,7 +349,8 @@ function showFirmwareInfo(firmware) {
     const hardwarePower = document.getElementById('hardwarePower');
     const hardwareSpecialFeatures = document.getElementById('hardwareSpecialFeatures');
     const specialFeaturesList = document.getElementById('specialFeaturesList');
-    
+    const schematicLink = document.getElementById('schematicLink');
+
     if (!firmware) {
         firmwareInfo.classList.add('d-none');
         // Sync log height when firmware info is hidden
@@ -390,23 +391,7 @@ function showFirmwareInfo(firmware) {
         } else {
             hardwareSpecialFeatures.classList.add('d-none');
         }
-        // Xử lý hiển thị ảnh board
-        const imageDisplay = document.getElementById('imageDisplay');
-        const boardImageLink = document.getElementById('boardImageLink');
-
-        if (firmware.image) {
-            imageDisplay.classList.remove('d-none');
-            boardImageLink.href = firmware.image;
-            boardImageLink.innerHTML = '<i class="bi bi-box-arrow-up-right me-1"></i>Hiển thị ảnh board';
-        } else if (firmware.schematic) {
-            imageDisplay.classList.remove('d-none');
-            boardImageLink.href = firmware.schematic;
-            boardImageLink.innerHTML = '<i class="bi bi-box-arrow-up-right me-1"></i>Hiển thị sơ đồ nguyên lý';
-        } else {
-            imageDisplay.classList.add('d-none');
-        }
-        // hết phần xử lý ảnh board        
-        hardwareInfo.classList.remove('d-none');
+         hardwareInfo.classList.remove('d-none');
     } else {
         // If no hardware info, show basic hardware version if available
         if (firmware.hardware_version) {
@@ -421,6 +406,17 @@ function showFirmwareInfo(firmware) {
         }
     }
     
+    // === THÊM CODE XỬ LÝ SCHEMATIC LINK Ở ĐÂY ===
+    // Xử lý schematic link
+    if (firmware.schematic) {
+        // Set trực tiếp URL schematic vào href của link
+        schematicLink.href = firmware.schematic;
+        schematicLink.classList.remove('d-none'); // Hiển thị link
+    } else {
+        schematicLink.classList.add('d-none'); // Ẩn link nếu không có schematic
+    }
+    // === KẾT THÚC PHẦN THÊM CODE ===
+
     // Update flash address input
     flashAddressInput.value = firmware.flashAddress;
     
