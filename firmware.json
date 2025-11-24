@@ -145,7 +145,7 @@
       "description": "Firmware XingZhi Cube AI Xiaozhi Music Việt Nam; wake word: Hi LiLy",
       "size": "9,748KB",
       "version": "2.0.5.04",
-      "category": "AI Xiaozhi",
+      "category": "Xingzhi-cube",
       "note": "Chỉ dành cho ESP32-S3 N16R8",
       "hardware_version": "ESP32-S3 N16R8",
       "hardware_info": {
@@ -179,7 +179,7 @@
       "description": "Firmware XingZhi Cube AI Xiaozhi Music Việt Nam; wake word: Hi LiLy",
       "size": "9,748KB",
       "version": "2.0.5.04",
-      "category": "AI Xiaozhi",
+      "category": "Xingzhi-cube",
       "note": "Chỉ dành cho ESP32-S3 N16R8",
       "hardware_version": "ESP32-S3 N16R8",
       "hardware_info": {
@@ -213,7 +213,7 @@
       "description": "Firmware board TÍM huyền thoại AI Xiaozhi Music Việt Nam; wake word: Hi LiLy",
       "size": "9,351KB",
       "version": "2.0.5.04",
-      "category": "AI Xiaozhi",
+      "category": "Bo Tím huyền thoại",
       "note": "Chỉ dành cho ESP32-S3 N16R8 module main Tím",
       "hardware_version": "XH-S3E-AI_V1.0 & V2.0",
       "hardware_info": {
@@ -247,7 +247,7 @@
       "description": "Firmware board TÍM huyền thoại AI Xiaozhi Music Việt Nam; wake word: Hi LiLy",
       "size": "9,351KB",
       "version": "2.0.5.04",
-      "category": "AI Xiaozhi",
+      "category": "Bo Tím huyền thoại",
       "note": "Chỉ dành cho ESP32-S3 N16R8 module main Tím",
       "hardware_version": "XH-S3E-AI_V1.0 & V2.0",
       "hardware_info": {
@@ -281,7 +281,7 @@
       "description": "Firmware board TÍM huyền thoại AI Xiaozhi Music Việt Nam; wake word: Hi LiLy",
       "size": "9,351KB",
       "version": "2.0.5.04",
-      "category": "AI Xiaozhi",
+      "category": "Bo Tím huyền thoại",
       "note": "Chỉ dành cho ESP32-S3 N16R8 module main Tím",
       "hardware_version": "XH-S3E-AI_V1.0 & V2.0",
       "hardware_info": {
@@ -313,9 +313,9 @@
       "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/BoTim_compact_wifi_board_Oled0.96.bin",
       "schematic": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/BoTim_compact_wifi_board_Oled0.96.png",
       "description": "Firmware board TÍM huyền thoại AI Xiaozhi Music Việt Nam; wake word: Hi LiLy",
-      "size": "9,351KB",
+      "size": "8,742KB",
       "version": "2.0.5.04",
-      "category": "AI Xiaozhi",
+      "category": "Bo Tím huyền thoại",
       "note": "Chỉ dành cho ESP32-S3 N16R8 module main Tím",
       "hardware_version": "XH-S3E-AI_V1.0 & V2.0",
       "hardware_info": {
@@ -347,9 +347,9 @@
       "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/BoTim_compact_wifi_board_Oled1.3.bin",
       "schematic": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/BoTim_compact_wifi_board_Oled1.3.png",
       "description": "Firmware board TÍM huyền thoại AI Xiaozhi Music Việt Nam; wake word: Hi LiLy",
-      "size": "9,351KB",
+      "size": "8,742KB",
       "version": "2.0.5.04",
-      "category": "AI Xiaozhi",
+      "category": "Bo Tím huyền thoại",
       "note": "Chỉ dành cho ESP32-S3 N16R8 module main Tím",
       "hardware_version": "XH-S3E-AI_V1.0 & V2.0",
       "hardware_info": {
@@ -378,8 +378,8 @@
   ],
   "categories": [
     "AI Xiaozhi",
-    "Basic Examples",
-    "WiFi Examples", 
+    "Bo Tím huyền thoại",
+    "Xingzhi-cube", 
     "Web Examples",
     "IoT Examples",
     "Bluetooth Examples",
