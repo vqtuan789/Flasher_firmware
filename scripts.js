@@ -390,7 +390,22 @@ function showFirmwareInfo(firmware) {
         } else {
             hardwareSpecialFeatures.classList.add('d-none');
         }
-        
+        // Xử lý hiển thị ảnh board
+        const imageDisplay = document.getElementById('imageDisplay');
+        const boardImageLink = document.getElementById('boardImageLink');
+
+        if (firmware.image) {
+            imageDisplay.classList.remove('d-none');
+            boardImageLink.href = firmware.image;
+            boardImageLink.innerHTML = '<i class="bi bi-box-arrow-up-right me-1"></i>Hiển thị ảnh board';
+        } else if (firmware.schematic) {
+            imageDisplay.classList.remove('d-none');
+            boardImageLink.href = firmware.schematic;
+            boardImageLink.innerHTML = '<i class="bi bi-box-arrow-up-right me-1"></i>Hiển thị sơ đồ nguyên lý';
+        } else {
+            imageDisplay.classList.add('d-none');
+        }
+        // hết phần xử lý ảnh board        
         hardwareInfo.classList.remove('d-none');
     } else {
         // If no hardware info, show basic hardware version if available
