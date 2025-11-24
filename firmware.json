@@ -4,8 +4,8 @@
       "name": "compact_wifi_board_lcd_240x240",
       "filename": "compact_wifi_board_lcd_240x240.bin",
       "flashAddress": "0x00000",
-      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/compact_wifi_board_lcd_240x240.bin",
-      "description": "Firmware board TÍM AI Xiaozhi Music Việt Nam; wake word: Hi LiLy",
+      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/compact_wifi_board_lcd_240x240.bin",     
+      "description": "Firmware board TÍM AI Xiaozhi Music Việt Nam; wake word: Hi LiLy....",
       "size": "9,351KB",
       "version": "2.0.5.04",
       "category": "AI Xiaozhi",
@@ -26,7 +26,7 @@
           "GPIO for touch buttons",
           "UART for debugging"
         ],
-        "power_requirements": "5V via USB",
+        "power_requirements": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/compact_wifi_board_lcd_240x240.png",
         "special_features": [
           "Built-in LCD display (240x240)",
           "Audio codec support"
@@ -59,7 +59,7 @@
           "GPIO for touch buttons",
           "UART for debugging"
         ],
-        "power_requirements": "5V via USB",
+        "power_requirements": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/compact_wifi_board_lcd_ST7789_240x320.png",
         "special_features": [
           "Built-in LCD display (240x320)",
           "Audio codec support"
@@ -92,7 +92,7 @@
           "GPIO for touch buttons",
           "UART for debugging"
         ],
-        "power_requirements": "5V via USB",
+        "power_requirements": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/compact_wifi_board_lcd_GC9A01_240x240_Tron.png",
         "special_features": [
           "Built-in LCD display (240x240)",
           "Audio codec support"
@@ -125,7 +125,7 @@
           "GPIO for touch buttons",
           "UART for debugging"
         ],
-        "power_requirements": "5V via USB",
+        "power_requirements": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/compact_wifi_board_lcd_ST7789_240x240.png",
         "special_features": [
           "Built-in LCD display (240x240)",
           "Audio codec support"
@@ -158,7 +158,7 @@
         "GPIO for touch buttons",
         "UART for debugging"
       ],
-      "power_requirements": "5V via USB",
+      "power_requirements": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/xingzhi-cube-1.54tft-wifi.png",
       "special_features": [
         "Built-in LCD display (240x240)",
         "Audio codec support"
@@ -191,7 +191,7 @@
         "GPIO for touch buttons",
         "UART for debugging"
       ],
-      "power_requirements": "5V via USB",
+      "power_requirements": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/xingzhi-cube-1.54tft-wifi_Wechat.png",
       "special_features": [
         "Built-in LCD display (240x240)",
         "Audio codec support"
@@ -224,7 +224,7 @@
         "GPIO for touch buttons",
         "UART for debugging"
       ],
-      "power_requirements": "5V via USB",
+      "power_requirements": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/BoTim_compact_wifi_board_lcd_GC9A01_240x240_Tron.png",
       "special_features": [
         "Built-in LCD display (240x240)",
         "Audio codec support"
@@ -257,7 +257,7 @@
         "GPIO for touch buttons",
         "UART for debugging"
       ],
-      "power_requirements": "5V via USB",
+      "power_requirements": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/BoTim_compact_wifi_board_lcd_ST7789_240x240.png",
       "special_features": [
         "Built-in LCD display (240x240)",
         "Audio codec support"
@@ -290,7 +290,7 @@
         "GPIO for touch buttons",
         "UART for debugging"
       ],
-      "power_requirements": "5V via USB",
+      "power_requirements": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/BoTim_compact_wifi_board_lcd_ST7789_240x320.png",
       "special_features": [
         "Built-in LCD display (240x320)",
         "Audio codec support"
