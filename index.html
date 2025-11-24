@@ -92,9 +92,20 @@
                                         <div class="mb-1">
                                             <span class="text-muted small"><i class="bi bi-lightning me-1"></i>Nguồn: <span id="hardwarePower"></span></span>
                                         </div>
+
                                         <div id="hardwareSpecialFeatures" class="small text-info d-none">
                                             <i class="bi bi-star me-1"></i>Tính năng đặc biệt: <span id="specialFeaturesList"></span>
                                         </div>
+                                        <!-- Image Display Section -->
+                                        <div id="imageDisplay" class="small border-top pt-2 mt-2 d-none" style="border-color: rgba(102, 126, 234, 0.2) !important;">
+                                            <div class="fw-semibold text-secondary mb-1">
+                                                <i class="bi bi-image me-1"></i>Hình ảnh board:
+                                            </div>
+                                            <a href="#" id="boardImageLink" target="_blank" class="text-decoration-none">
+                                                <i class="bi bi-box-arrow-up-right me-1"></i>Hiển thị ảnh
+                                            </a>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -203,6 +214,6 @@
     <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/crypto-js.js"></script>
 
     <!-- Main Application Script -->
-    <script type="module" src="scripts.js"></script>
+    <script type="module" src="scripts.js?v=1.0.0"></script>
 </body>
 </html>
