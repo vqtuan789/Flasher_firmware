@@ -1,7 +1,6 @@
 {
   "firmwareList": [
-    { 
-      "id": "compact_wifi_board_lcd_240x240",
+    { "id": "compact_wifi_board_lcd_240x240",
       "name": "compact_wifi_board_lcd_240x240",
       "filename": "compact_wifi_board_lcd_240x240.bin",
       "flashAddress": "0x00000",
@@ -35,8 +34,7 @@
         ]
       }
     },
-    { 
-      "id": "compact_wifi_board_lcd_ST7789_240x320",
+    { "id": "compact_wifi_board_lcd_ST7789_240x320",
       "name": "compact_wifi_board_lcd_ST7789_240x320",
       "filename": "compact_wifi_board_lcd_ST7789_240x320.bin",
       "flashAddress": "0x00000",
@@ -70,8 +68,7 @@
         ]
       }
     },
-    { 
-      "id": "compact_wifi_board_lcd_GC9A01_240x240_Tron",
+    { "id": "compact_wifi_board_lcd_GC9A01_240x240_Tron",
       "name": "compact_wifi_board_lcd_GC9A01_240x240_Tron",
       "filename": "compact_wifi_board_lcd_GC9A01_240x240_Tron.bin",
       "flashAddress": "0x00000",
@@ -105,8 +102,7 @@
         ]
       }
     },
-    { 
-      "id": "compact_wifi_board_lcd_ST7789_240x240",
+    { "id": "compact_wifi_board_lcd_ST7789_240x240",
       "name": "compact_wifi_board_lcd_ST7789_240x240",
       "filename": "compact_wifi_board_lcd_ST7789_240x240.bin",
       "flashAddress": "0x00000",
@@ -140,8 +136,7 @@
         ]
       }
     },
-    { 
-      "id": "xingzhi-cube-1.54tft-wifi",
+    { "id": "xingzhi-cube-1.54tft-wifi",
       "name": "xingzhi-cube-1.54tft-wifi",
       "filename": "xingzhi-cube-1.54tft-wifi.bin",
       "flashAddress": "0x00000",
@@ -175,8 +170,7 @@
         ]
       }
     },
-    { 
-      "id": "xingzhi-cube-1.54tft-wifi_Wechat",
+    { "id": "xingzhi-cube-1.54tft-wifi_Wechat",
       "name": "xingzhi-cube-1.54tft-wifi_Wechat",
       "filename": "xingzhi-cube-1.54tft-wifi_Wechat.bin",
       "flashAddress": "0x00000",
@@ -210,8 +204,7 @@
         ]
       }
     },
-    { 
-      "id": "BoTim_compact_wifi_board_lcd_GC9A01_240x240_Tron",
+    { "id": "BoTim_compact_wifi_board_lcd_GC9A01_240x240_Tron",
       "name": "BoTim_compact_wifi_board_lcd_GC9A01_240x240_Tron",
       "filename": "BoTim_compact_wifi_board_lcd_GC9A01_240x240_Tron.bin",
       "flashAddress": "0x00000",
@@ -245,8 +238,7 @@
         ]
       }
     },
-    { 
-      "id": "BoTim_compact_wifi_board_lcd_ST7789_240x240",
+    { "id": "BoTim_compact_wifi_board_lcd_ST7789_240x240",
       "name": "BoTim_compact_wifi_board_lcd_ST7789_240x240",
       "filename": "BoTim_compact_wifi_board_lcd_ST7789_240x240.bin",
       "flashAddress": "0x00000",
@@ -280,13 +272,12 @@
         ]
       }
     },
-    { 
-      "id": "BoTim_compact_wifi_board_lcd_ST7789_240x320",
-      "name": "BoTim_compact_wifi_board_lcd_ST7789_240x320",
-      "filename": "BoTim_compact_wifi_board_lcd_ST7789_240x320.bin",
+    { "id": "BoTim_compact_wifi_board_Oled0.96",
+      "name": "BoTim_compact_wifi_board_Oled0.96",
+      "filename": "BoTim_compact_wifi_board_Oled0.96.bin",
       "flashAddress": "0x00000",
-      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/BoTim_compact_wifi_board_lcd_ST7789_240x320.bin",
-      "schematic": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/BoTim_compact_wifi_board_lcd_ST7789_240x320.png",
+      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/BoTim_compact_wifi_board_Oled0.96.bin",
+      "schematic": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/BoTim_compact_wifi_board_Oled0.96.png",
       "description": "Firmware board TÍM huyền thoại AI Xiaozhi Music Việt Nam; wake word: Hi LiLy",
       "size": "9,351KB",
       "version": "2.0.5.04",
@@ -310,11 +301,45 @@
         ],
         "power_requirements": "5V via USB",
         "special_features": [
-          "Built-in LCD display (240x320)",
+          "Built-in OLED display 0.96' (128x64)",
           "Audio codec support"
         ]
       }
-    }
+    },
+    { "id": "BoTim_compact_wifi_board_Oled1.3",
+      "name": "BoTim_compact_wifi_board_Oled1.3",
+      "filename": "BoTim_compact_wifi_board_Oled1.3.bin",
+      "flashAddress": "0x00000",
+      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/BoTim_compact_wifi_board_Oled1.3.bin",
+      "schematic": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/BoTim_compact_wifi_board_Oled1.3.png",
+      "description": "Firmware board TÍM huyền thoại AI Xiaozhi Music Việt Nam; wake word: Hi LiLy",
+      "size": "9,351KB",
+      "version": "2.0.5.04",
+      "category": "AI Xiaozhi",
+      "note": "Chỉ dành cho ESP32-S3 N16R8 module main Tím",
+      "hardware_version": "XH-S3E-AI_V1.0 & V2.0",
+      "hardware_info": {
+        "chip": "ESP32-S3 XH-S3E",
+        "flash_size": "16MB",
+        "compatible_boards": ["compact_wifi_board_lcd"],
+        "minimum_requirements": {
+          "flash": "8MB",
+          "ram": "512KB",
+          "psram": "2MB"
+        },
+        "gpio_requirements": [
+          "I2S for audio output",
+          "I2C for OLED display",
+          "GPIO for touch buttons",
+          "UART for debugging"
+        ],
+        "power_requirements": "5V via USB",
+        "special_features": [
+          "Built-in OLED display 1.3' (128x64)",
+          "Audio codec support"
+        ]
+      }
+    }      
   ],
   "categories": [
     "AI Xiaozhi",
