@@ -951,6 +951,36 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     // Load firmware database
     await loadFirmwareDatabase();
+
+    // === XỬ LÝ URL PARAMETER: hỗ trợ cả ?name= và #name= ===
+    // Lấy param từ ?name=
+    const searchParams = new URLSearchParams(window.location.search);
+    let firmwareName = searchParams.get('name');
+
+    // Nếu không có ?name= thì thử dạng #name=
+    if (!firmwareName) {
+        const hash = window.location.hash.substring(1);
+        const hashParams = new URLSearchParams(hash);
+        firmwareName = hashParams.get('name');
+    }
+
+    if (firmwareName) {
+        const firmwareSelect = document.getElementById('firmwareList');
+
+        setTimeout(() => {
+            for (let option of firmwareSelect.options) {
+                const fw = option.dataset.firmware ? JSON.parse(option.dataset.firmware) : null;
+                if (!fw) continue;
+
+                if (fw.id === firmwareName || fw.name === firmwareName) {
+                    firmwareSelect.value = option.value;
+                    firmwareSelect.dispatchEvent(new Event('change'));
+                    log(`✅ Đã tự động chọn firmware từ URL: ${firmwareName}`);
+                    break;
+                }
+            }
+        }, 300);
+    }//Hết phần xử lý  URL PARAMETER
     
     // Initial sync log height
     setTimeout(() => {
