@@ -373,14 +373,48 @@
           "Audio codec support"
         ]
       }
-    }   
+    },
+{ "id": "merged-binary_xmini_C3",
+      "name": "merged-binary_xmini_C3.bin",
+      "filename": "merged-binary_xmini_C3.bin",
+      "flashAddress": "0x00000",
+      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/merged-binary_xmini_C3.bin",
+      "schematic": "",
+      "description": "Firmware board C3 mini",
+      "size": "8,742KB",
+      "version": "2.0.5.04",
+      "category": "Bo c3 mini",
+      "note": "Chỉ dành cho bo c3 mịni",
+      "hardware_version": "XH-S3E-AI_V1.0 & V2.0",
+      "hardware_info": {
+        "chip": "ESP32-C",
+        "flash_size": "xMB",
+        "compatible_boards": ["compact_wifi_board_lcd"],
+        "minimum_requirements": {
+          "flash": "xMB",
+          "ram": "512KB",
+          "psram": "xMB"
+        },
+        "gpio_requirements": [
+          "I2S for audio output",
+          "I2C for OLED display",
+          "GPIO for touch buttons",
+          "UART for debugging"
+        ],
+        "power_requirements": "5V via USB",
+        "special_features": [
+          "Built-in OLED display 0.96' (128x64)",
+          "Audio codec support"
+        ]
+      }
+    }       
 
   ],
   "categories": [
     "AI Xiaozhi",
     "Bo Tím huyền thoại",
     "Xingzhi-cube", 
-    "Web Examples",
+    "Mini C3",
     "IoT Examples",
     "Bluetooth Examples",
     "BLE Examples",
