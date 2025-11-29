@@ -170,9 +170,9 @@
         ]
       }
     },    
-    { "id": "compact_wifi_S3Cam_OV2640_ST7789_240x320.bin",
+    { "id": "compact_wifi_S3Cam_OV2640_ST7789_240x320",
       "name": "compact_wifi_S3Cam_OV2640_ST7789_240x320",
-      "filename": "compact_wifi_S3Cam_OV2640_ST7789_240x320",
+      "filename": "compact_wifi_S3Cam_OV2640_ST7789_240x320.bin",
       "flashAddress": "0x00000",
       "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/compact_wifi_S3Cam_OV2640_ST7789_240x320.bin",
       "schematic": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/compact_wifi_S3Cam_OV2640_ST7789_240x320.png",
@@ -204,9 +204,9 @@
         ]
       }
     },     
-    { "id": "compact_wifi_S3Cam_OV3660_ST7789_240x320.bin",
+    { "id": "compact_wifi_S3Cam_OV3660_ST7789_240x320",
       "name": "compact_wifi_S3Cam_OV3660_ST7789_240x320",
-      "filename": "compact_wifi_S3Cam_OV3660_ST7789_240x320",
+      "filename": "compact_wifi_S3Cam_OV3660_ST7789_240x320.bin",
       "flashAddress": "0x00000",
       "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/compact_wifi_S3Cam_OV3660_ST7789_240x320.bin",
       "schematic": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/compact_wifi_S3Cam_OV3660_ST7789_240x320.png",
