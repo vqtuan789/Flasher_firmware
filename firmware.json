@@ -437,7 +437,7 @@
         ],
         "power_requirements": "5V via USB",
         "special_features": [
-          "Built-in LCD display 0.96' (160x80)",
+          "Built-in LCD display 0.96' (160x80) Chip ST7789",
           "Audio codec support"
         ]
       }
