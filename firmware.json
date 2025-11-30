@@ -268,7 +268,7 @@
         "power_requirements": "5V via USB",
         "special_features": [
           "Built-in LCD display (240x240)",
-          "Audio codec support"
+          "Audio codec support",
           " OTA trực tiếp và nạp file Assets trực tiếp từ điện thoại"
         ]
       }
