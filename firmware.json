@@ -269,6 +269,7 @@
         "special_features": [
           "Built-in LCD display (240x240)",
           "Audio codec support"
+          " OTA trực tiếp và nạp file Assets trực tiếp từ điện thoại"
         ]
       }
     },
