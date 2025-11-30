@@ -494,8 +494,8 @@
         "compatible_boards": ["xmini-c3"],
         "minimum_requirements": {
           "flash": "16MB",
-          "ram": "512KB",
-          "psram": "xMB"
+          "ram": "xxxKB",
+          "psram": "400Kb"
         },
         "gpio_requirements": [
           "I2S for audio output",
