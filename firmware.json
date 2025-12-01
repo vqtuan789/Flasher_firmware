@@ -520,7 +520,7 @@
       "description": "Firmware board C3 mini",
       "size": "8,458KB",
       "version": "2.0.5.04",
-      "category": "Bo c3 mini",
+      "category": "Board khác",
       "note": "Chỉ dành cho bo Xmini c3 16Mb flash",
       "hardware_version": "XH-S3E-AI_V1.0 & V2.0",
       "hardware_info": {
@@ -544,7 +544,41 @@
           "Audio codec support"
         ]
       }
-    }       
+    },
+    { "id": "es3n28p-lcd-2.8tft_v2.0.5.05",
+      "name": "es3n28p-lcd-2.8tft_v2.0.5.05",
+      "filename": "es3n28p-lcd-2.8tft_v2.0.5.05.bin",
+      "flashAddress": "0x00000",
+      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/es3n28p-lcd-2.8tft_v2.0.5.05.bin",
+      "schematic": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/es3n28p-lcd-2.8tft_v2.0.5.05.png",
+      "description": "Firmware board C3 mini",
+      "size": "9,719KB",
+      "version": "2.0.5.05",
+      "category": "Board khác",
+      "note": "Chỉ dành cho bo Xmini c3 16Mb flash",
+      "hardware_version": "XH-S3E-AI_V1.0 & V2.0",
+      "hardware_info": {
+        "chip": "ESP32-S3 es3n28p",
+        "flash_size": "16MB",
+        "compatible_boards": ["es3n28p"],
+        "minimum_requirements": {
+          "flash": "16MB",
+          "ram": "512KB",
+          "psram": "xMB"
+        },
+        "gpio_requirements": [
+          "I2S for audio output",
+          "I2C for OLED display",
+          "GPIO for touch buttons",
+          "UART for debugging"
+        ],
+        "power_requirements": "5V via USB",
+        "special_features": [
+          "Built-in TFT ILI9341V 2.8' (240x320)",
+          "Audio codec support"
+        ]
+      }
+    }            
 
   ],
   "categories": [
@@ -552,7 +586,7 @@
     "Bo Tím huyền thoại",
     "Xingzhi-cube", 
     "Mini C3",
-    "IoT Examples",
+    "Board khác",
     "Bluetooth Examples",
     "BLE Examples",
     "Power Management",
