@@ -516,7 +516,7 @@
       "filename": "BoTim_compact_wifi_board_Oled0.96.bin",
       "flashAddress": "0x00000",
       "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/BoTim_compact_wifi_board_Oled0.96.bin",
-      "schematic": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/BoTim_compact_wifi_board_Oled0.96_Audio3.5mm_PCM5102.png",
+      "schematic": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/BoTim_compact_wifi_board_Oled0.96_Audio3.5mm_PCM5102.png",
       "description": "Firmware board TÍM huyền thoại ESP32 S3 N16R8 Music Việt Nam; wake word: Hi LiLy",
       "size": "8,742KB",
       "version": "2.0.5.04",
