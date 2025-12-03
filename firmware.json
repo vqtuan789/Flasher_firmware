@@ -594,7 +594,7 @@
       "hardware_info": {
         "chip": "ESP32-S3 es3n28p",
         "flash_size": "16MB",
-        "compatible_boards": ["es3n28p"],
+        "compatible_boards": ["es3n28p https://docs.freenove.com/projects/fnk0104/en/latest/fnk0104/codes/MAIN/Preface.html"],
         "minimum_requirements": {
           "flash": "16MB",
           "ram": "512KB",
