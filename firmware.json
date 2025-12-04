@@ -375,11 +375,11 @@
         ]
       }
     },
-    { "id": "BoTim_compact_wifi_board_lcd_ST7789_240x320",
-      "name": "BoTim_compact_wifi_board_lcd_ST7789_240x320",
-      "filename": "BoTim_compact_wifi_board_lcd_ST7789_240x320.bin",
+    { "id": "BoTim_compact_wifi_board_lcd_ST7789_240x320_fix",
+      "name": "BoTim_compact_wifi_board_lcd_ST7789_240x320_fix",
+      "filename": "BoTim_compact_wifi_board_lcd_ST7789_240x320_fix.bin",
       "flashAddress": "0x00000",
-      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/BoTim_compact_wifi_board_lcd_ST7789_240x320.bin",
+      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/BoTim_compact_wifi_board_lcd_ST7789_240x320_fix.bin",
       "schematic": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/BoTim_compact_wifi_board_lcd_ST7789_240x320.png",
       "description": "Firmware board TÍM huyền thoại ESP32 S3 N16R8 tím hoặc đen Music Việt Nam; wake word: Hi LiLy",
       "size": "9,351KB",
