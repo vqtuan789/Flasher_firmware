@@ -243,7 +243,7 @@
       "filename": "xingzhi-cube-1.54tft-wifi.bin",
       "flashAddress": "0x00000",
       "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/xingzhi-cube-1.54tft-wifi.bin",
-      "schematic": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/ESP32S3_N16R8_to_xingzhi-cube.png",
+      "schematic": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/ESP32S3_N16R8_to_xingzhi-cube1.png",
       "description": "Firmware XingZhi Cube ESP32 S3 N16R8 tím hoặc đen Music Việt Nam; wake word: Hi LiLy",
       "size": "9,748KB",
       "version": "2.0.5.04",
