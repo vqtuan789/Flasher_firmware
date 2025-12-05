@@ -237,7 +237,42 @@
           "Audio codec support"
         ]
       }
-    },         
+    },
+    { "id": "ESP32S3 N16R8 to xingzhi-cube",
+      "name": "ESP32S3 N16R8 to xingzhi-cube",
+      "filename": "xingzhi-cube-1.54tft-wifi.bin",
+      "flashAddress": "0x00000",
+      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/xingzhi-cube-1.54tft-wifi.bin",
+      "schematic": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/ESP32S3_N16R8_to_xingzhi-cube.png",
+      "description": "Firmware XingZhi Cube ESP32 S3 N16R8 tím hoặc đen Music Việt Nam; wake word: Hi LiLy",
+      "size": "9,748KB",
+      "version": "2.0.5.04",
+      "category": "Xingzhi-cube",
+      "note": "Chỉ dành cho ESP32-S3 N16R8",
+      "hardware_version": "ESP32-S3 N16R8",
+      "hardware_info": {
+        "chip": "ESP32-S3 N16R8",
+        "flash_size": "16MB",
+        "compatible_boards": ["xingzhi-cube-1.54tft-wifi"],
+        "minimum_requirements": {
+          "flash": "8MB",
+          "ram": "512KB",
+          "psram": "2MB"
+        },
+        "gpio_requirements": [
+          "I2S for audio output",
+          "I2C for OLED display",
+          "GPIO for touch buttons",
+          "UART for debugging"
+        ],
+        "power_requirements": "5V via USB",
+        "special_features": [
+          "Built-in LCD display (240x240)",
+          "Audio codec support",
+          " OTA trực tiếp và nạp file Assets trực tiếp từ điện thoại"
+        ]
+      }
+    },    
     { "id": "xingzhi-cube-1.54tft-wifi",
       "name": "xingzhi-cube-1.54tft-wifi",
       "filename": "xingzhi-cube-1.54tft-wifi.bin",
