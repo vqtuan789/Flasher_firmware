@@ -658,8 +658,8 @@
       "size": "9,719KB",
       "version": "2.0.5.05",
       "category": "Board khác",
-      "note": "Chỉ dành cho bo Xmini c3 16Mb flash",
-      "hardware_version": "XH-S3E-AI_V1.0 & V2.0",
+      "note": "Chỉ dành cho bo es3n28p 16Mb flash",
+      "hardware_version": "es3n28p",
       "hardware_info": {
         "chip": "ESP32-S3 es3n28p",
         "flash_size": "16MB",
@@ -681,7 +681,41 @@
           "Audio codec support"
         ]
       }
-    }            
+    },
+    { "id": "xiaozhi_ai_iot_vn_es3n28p_lcd_2.8_sd_music_touch",
+      "name": "xiaozhi_ai_iot_vn_es3n28p_lcd_2.8_sd_music_touch",
+      "filename": "xiaozhi_ai_iot_vn_es3n28p_lcd_2.8_sd_music_touch.bin",
+      "flashAddress": "0x00000",
+      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/xiaozhi_ai_iot_vn_es3n28p_lcd_2.8_sd_music_touch.bin",
+      "schematic": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/xiaozhi_ai_iot_vn_es3n28p_lcd_2.8_sd_music_touch.bin.png",
+      "description": "Firmware board es3n28p",
+      "size": "9,719KB",
+      "version": "2.0.5.05",
+      "category": "Board khác",
+      "note": "Chỉ dành cho bo es3n28p",
+      "hardware_version": "es3n28p",
+      "hardware_info": {
+        "chip": "ESP32-S3 es3n28p",
+        "flash_size": "16MB",
+        "compatible_boards": ["es3n28p https://docs.freenove.com/projects/fnk0104/en/latest/fnk0104/codes/MAIN/Preface.html"],
+        "minimum_requirements": {
+          "flash": "16MB",
+          "ram": "512KB",
+          "psram": "xMB"
+        },
+        "gpio_requirements": [
+          "I2S for audio output",
+          "I2C for OLED display",
+          "GPIO for touch buttons",
+          "UART for debugging"
+        ],
+        "power_requirements": "5V via USB",
+        "special_features": [
+          "Built-in TFT ILI9341V 2.8' (240x320)",
+          "Audio codec support"
+        ]
+      }
+    }     
   ],
   "categories": [
     "ESP32 S3 N16R8 tím hoặc đen",
