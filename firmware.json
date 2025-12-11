@@ -687,7 +687,7 @@
       "filename": "xiaozhi_ai_iot_vn_es3n28p_lcd_2.8_sd_music_touch.bin",
       "flashAddress": "0x00000",
       "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/xiaozhi_ai_iot_vn_es3n28p_lcd_2.8_sd_music_touch.bin",
-      "schematic": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/xiaozhi_ai_iot_vn_es3n28p_lcd_2.8_sd_music_touch.bin.png",
+      "schematic": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/xiaozhi_ai_iot_vn_es3n28p_lcd_2.8_sd_music_touch.png",
       "description": "Firmware board es3n28p",
       "size": "9,719KB",
       "version": "2.0.5.05",
