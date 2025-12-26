@@ -421,7 +421,7 @@
       "schematic": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/BoTim_compact_wifi_board_lcd_ST7789_240x240.png",
       "description": "Firmware board TÍM huyền thoại ESP32 S3 N16R8 tím hoặc đen Music Việt Nam; wake word: Hi LiLy",
       "size": "9,351KB",
-      "version": "2.0.5.04",
+      "version": "2.0.5.06",
       "category": "Bo Tím huyền thoại",
       "note": "Chỉ dành cho ESP32-S3 N16R8 module main Tím",
       "hardware_version": "XH-S3E-AI_V1.0 & V2.0",
@@ -437,6 +437,7 @@
         "gpio_requirements": [
           "I2S for audio output",
           "I2C for OLED display",
+          "auto weather",
           "GPIO for touch buttons",
           "UART for debugging"
         ],
@@ -447,15 +448,15 @@
         ]
       }
     },
-    { "id": "BoTim_compact_wifi_board_lcd_ST7789_240x320_fix",
-      "name": "BoTim_compact_wifi_board_lcd_ST7789_240x320_fix",
-      "filename": "BoTim_compact_wifi_board_lcd_ST7789_240x320_fix.bin",
+    { "id": "BoTim_Weather_ST7789_240x320_fix",
+      "name": "BoTim_Weather_ST7789_240x320_fix",
+      "filename": "BoTim_Weather_ST7789_240x320_fix.bin",
       "flashAddress": "0x00000",
-      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/BoTim_compact_wifi_board_lcd_ST7789_240x320_fix.bin",
+      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/BoTim_Weather_ST7789_240x320_fix.bin",
       "schematic": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/BoTim_compact_wifi_board_lcd_ST7789_240x320.png",
       "description": "Firmware board TÍM huyền thoại ESP32 S3 N16R8 tím hoặc đen Music Việt Nam; wake word: Hi LiLy",
       "size": "9,351KB",
-      "version": "2.0.5.04",
+      "version": "2.0.5.06",
       "category": "Bo Tím huyền thoại",
       "note": "Chỉ dành cho ESP32-S3 N16R8 module main Tím",
       "hardware_version": "XH-S3E-AI_V1.0 & V2.0",
@@ -471,6 +472,7 @@
         "gpio_requirements": [
           "I2S for audio output",
           "I2C for OLED display",
+          "auto weather",
           "GPIO for touch buttons",
           "UART for debugging"
         ],
