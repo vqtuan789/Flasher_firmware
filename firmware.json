@@ -273,15 +273,15 @@
         ]
       }
     },    
-    { "id": "xingzhi-cube-1.54tft-wifi",
-      "name": "xingzhi-cube-1.54tft-wifi",
-      "filename": "xingzhi-cube-1.54tft-wifi.bin",
+    { "id": "xingzhi_cube_1.54tft_weather_v2.0.5.06",
+      "name": "xingzhi_cube_1.54tft_weather_v2.0.5.06",
+      "filename": "xingzhi_cube_1.54tft_weather_v2.0.5.06.bin",
       "flashAddress": "0x00000",
-      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/xingzhi-cube-1.54tft-wifi.bin",
+      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/xingzhi_cube_1.54tft_weather_v2.0.5.06.bin",
       "schematic": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/xingzhi-cube-1.54tft-wifi.png",
       "description": "Firmware XingZhi Cube ESP32 S3 N16R8 tím hoặc đen Music Việt Nam; wake word: Hi LiLy",
       "size": "9,748KB",
-      "version": "2.0.5.04",
+      "version": "2.0.5.06",
       "category": "Xingzhi-cube",
       "note": "Chỉ dành cho ESP32-S3 N16R8",
       "hardware_version": "ESP32-S3 N16R8",
@@ -304,6 +304,7 @@
         "special_features": [
           "Built-in LCD display (240x240)",
           "Audio codec support",
+          "Auto weather",
           " OTA trực tiếp và nạp file Assets trực tiếp từ điện thoại"
         ]
       }
