@@ -238,11 +238,11 @@
         ]
       }
     },
-    { "id": "ESP32S3 N16R8 to xingzhi-cube",
-      "name": "ESP32S3 N16R8 to xingzhi-cube",
-      "filename": "xingzhi_cube_1.54tft_weather_v2.0.5.06.bin",
+    { "id": "XingzhiCube-newWeather",
+      "name": "XingzhiCube-newWeather",
+      "filename": "XingzhiCube-newWeather.bin",
       "flashAddress": "0x00000",
-      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/xingzhi_cube_1.54tft_weather_v2.0.5.06",
+      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/XingzhiCube-newWeather.bin",
       "schematic": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/ESP32S3_N16R8_to_xingzhi-cube1.png",
       "description": "Firmware XingZhi Cube ESP32 S3 N16R8 tím hoặc đen Music Việt Nam; wake word: Hi LiLy",
       "size": "9,748KB",
