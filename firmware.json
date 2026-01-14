@@ -655,11 +655,11 @@
         ]
       }
     },
-    { "id": "es3n28p-lcd-2.8tft_v2.0.5.05",
-      "name": "es3n28p-lcd-2.8tft_v2.0.5.05",
-      "filename": "es3n28p-lcd-2.8tft_v2.0.5.05.bin",
+    { "id": "xiaozhi-ai-iot-vietnam-es3n28p-2.8-weather",
+      "name": "xiaozhi-ai-iot-vietnam-es3n28p-2.8-weather",
+      "filename": "xiaozhi-ai-iot-vietnam-es3n28p-2.8-weather.bin",
       "flashAddress": "0x00000",
-      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/es3n28p-lcd-2.8tft_v2.0.5.05.bin",
+      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/xiaozhi-ai-iot-vietnam-es3n28p-2.8-weather.bin",
       "schematic": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/es3n28p-lcd-2.8tft_v2.0.5.05.png",
       "description": "Firmware board es3n28p",
       "size": "9,719KB",
