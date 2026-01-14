@@ -407,13 +407,16 @@ function showFirmwareInfo(firmware) {
     }
     
     // === THÊM CODE XỬ LÝ SCHEMATIC LINK Ở ĐÂY ===
-    // Xử lý schematic link
-    if (firmware.schematic) {
-        // Set trực tiếp URL schematic vào href của link
+    // Xử lý schematic link và icon
+    const schematicIcon = document.getElementById('schematicIcon');
+    if (firmware.schematic && firmware.icon) {
+        // Set schematic URL vào href
         schematicLink.href = firmware.schematic;
+        // Set icon URL vào img src
+        schematicIcon.src = firmware.icon;
         schematicLink.classList.remove('d-none'); // Hiển thị link
     } else {
-        schematicLink.classList.add('d-none'); // Ẩn link nếu không có schematic
+        schematicLink.classList.add('d-none'); // Ẩn link nếu không có schematic hoặc icon
     }
     // === KẾT THÚC PHẦN THÊM CODE ===
 
