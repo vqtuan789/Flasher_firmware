@@ -6,7 +6,7 @@
       "flashAddress": "0x00000",
       "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/compact_wifi_board_lcd_240x240.bin",
       "schematic": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/compact_wifi_board_lcd_240x240.png",
-      "icon": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/Icon/ESP32-S3.png",
+      "icon": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/Icon/ESP32-S3.png",
       "description": "Firmware board TÍM ESP32 S3 N16R8 tím hoặc đen Music Việt Nam; wake word: Hi LiLy 2",
       "size": "9,351KB",
       "version": "2.0.5.04",
