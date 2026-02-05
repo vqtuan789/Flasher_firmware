@@ -245,6 +245,44 @@
         ]
       }
     },
+    { "id": "Xiaozhi-ai-iot-3.5",
+      "name": "Xiaozhi-ai-iot-3.5",
+      "filename": "Xiaozhi-ai-iot-3.5.bin",
+      "flashAddress": "0x00000",
+      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/Xiaozhi-ai-iot-3.5.bin",
+      "schematic": "https://raw.githubusercontent.com/vqtuan789/Flasher_firmware/refs/heads/master/samples/Xiaozhi-ai-iot-3.5.png",
+      "icon": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/Xiaozhi-ai-iot-3.5_icon.png",
+      "description": "Firmware giống XingZhi Cube ESP32 S3 N16R8 tím hoặc đen Music Việt Nam;mic rất nhậy, có cổng 3.5 loa ngoài; wake word: Hi LiLy",
+      "size": "9,748KB",
+      "version": "2.0.5.06",
+      "category": "Xingzhi-cube",
+      "note": "Chỉ dành cho ESP32-S3 N16R8",
+      "hardware_version": "ESP32-S3 N16R8",
+      "hardware_info": {
+        "chip": "ESP32-S3 N16R8",
+        "flash_size": "16MB",
+        "compatible_boards": ["Xiaozhi-ai-iot-3.5"],
+        "minimum_requirements": {
+          "flash": "8MB",
+          "ram": "512KB",
+          "psram": "2MB"
+        },
+        "gpio_requirements": [
+          "I2S for audio output",
+          "I2C for OLED display",
+          "Out jack 3.5mm for external speaker",
+          "auto weather",
+          "GPIO for touch buttons",
+          "UART for debugging"
+        ],
+        "power_requirements": "5V via USB",
+        "special_features": [
+          "Built-in LCD display (284x240)",
+          "Audio codec support",
+          " OTA trực tiếp và nạp file Assets trực tiếp từ điện thoại"
+        ]
+      }
+    },        
     { "id": "XingzhiCube-newWeather",
       "name": "XingzhiCube-newWeather",
       "filename": "XingzhiCube-newWeather.bin",
@@ -744,6 +782,44 @@
         ]
       }
     },
+    { "id": "V8.5.30x240x230x90",
+      "name": "V8.5.30x240x230x90",
+      "filename": "V8.5.30x240x230x90.bin",
+      "flashAddress": "0x00000",
+      "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/V8.5.30x240x230x90.bin",
+      "schematic": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/V8.5.30x240x230x90.png",
+      "icon": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/V8.5.30x240x230x90_icon.png",
+      "description": "Firmware board es3s3",
+      "size": "9,719KB",
+      "version": "2.0.5.06",
+      "category": "Loa V8 Bluetooth",
+      "note": "Chỉ dành cho Loa V8 Bluetooth",
+      "hardware_version": "esp32s3",
+      "hardware_info": {
+        "chip": "ESP32-S3 esp32s3",
+        "flash_size": "16MB",
+        "compatible_boards": ["esp32s3"],
+        "minimum_requirements": {
+          "flash": "16MB",
+          "ram": "512KB",
+          "psram": "8MB"
+        },
+        "gpio_requirements": [
+          "I2S for audio output",
+          "I2C for OLED display",
+          "GPIO for touch buttons",
+          "UART for debugging"
+        ],
+        "power_requirements": "5V via USB",
+        "special_features": [
+          "Built-in TFT ST7789 (240x320)",
+          "Audio codec support",
+          "Out jack 3.5mm for external speaker",
+          "Bluetooth Audio",
+          "Sdcard music playback"
+        ]
+      }
+    },
     { "id": "xiaozhi_ai_iot_vn_es3n28p_lcd_2.8_sd_music_touch",
       "name": "xiaozhi_ai_iot_vn_es3n28p_lcd_2.8_sd_music_touch",
       "filename": "xiaozhi_ai_iot_vn_es3n28p_lcd_2.8_sd_music_touch.bin",
@@ -753,18 +829,18 @@
       "icon": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/Icon/es3n28p.png",
       "description": "Firmware board es3n28p",
       "size": "9,719KB",
-      "version": "2.0.5.05",
+      "version": "2.0.5.06",
       "category": "Board khác",
       "note": "Chỉ dành cho bo es3n28p",
-      "hardware_version": "es3n28p",
+      "hardware_version": "esp32s3",
       "hardware_info": {
-        "chip": "ESP32-S3 es3n28p",
+        "chip": "ESP32-S3 esp32s3",
         "flash_size": "16MB",
         "compatible_boards": ["es3n28p https://docs.freenove.com/projects/fnk0104/en/latest/fnk0104/codes/MAIN/Preface.html"],
         "minimum_requirements": {
           "flash": "16MB",
           "ram": "512KB",
-          "psram": "xMB"
+          "psram": "MB"
         },
         "gpio_requirements": [
           "I2S for audio output",
@@ -783,10 +859,10 @@
   "categories": [
     "ESP32 S3 N16R8 tím hoặc đen",
     "Bo Tím huyền thoại",
-    "Xingzhi-cube", 
+    "Xingzhi-cube",
     "Mini C3",
     "Board khác",
-    "Bluetooth Examples",
+    "Loa V8 Bluetooth",
     "BLE Examples",
     "Power Management",
     "Camera Examples"
