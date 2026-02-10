@@ -1,0 +1,50 @@
+{
+  "name": "Xiaozhi AI IoT 3.5",
+  "version": "3.5",
+  "home_assistant_domain": "xiaozhi",
+  "funding_url": "https://github.com/vqtuan789/Flasher_firmware",
+  "new_install_prompt_erase": false,
+  "new_install_improv_wait_time": 15,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "improv": false,
+      "parts": [
+        {
+          "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/Xiaozhi-ai-iot-3.5.bin",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "chipFamily": "ESP32-S3",
+      "improv": false,
+      "parts": [
+        {
+          "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/Xiaozhi-ai-iot-3.5.bin",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "chipFamily": "ESP32-C3",
+      "improv": false,
+      "parts": [
+        {
+          "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/Xiaozhi-ai-iot-3.5.bin",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "chipFamily": "ESP8266",
+      "improv": false,
+      "parts": [
+        {
+          "path": "https://cdn.jsdelivr.net/gh/vqtuan789/Flasher_firmware@master/samples/Xiaozhi-ai-iot-3.5.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Xiaozhi AI IoT Firmware Flasher</title>
+    <meta
+      name="description"
+      content="Flash Xiaozhi AI IoT firmware to your ESP device directly in your browser."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <meta property="og:title" content="Xiaozhi AI IoT Firmware Flasher" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="Flash Xiaozhi AI IoT firmware to your ESP device directly in your browser."
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Ubuntu, sans-serif;
+        padding: 0;
+        margin: 0;
+        line-height: 1.5;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        padding: 40px;
+        text-align: center;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .card {
+          background: #1e1e1e;
+          color: #e0e0e0;
+        }
+
+        a {
+          color: #66b3ff;
+        }
+
+        a:hover {
+          color: #99ccff;
+        }
+      }
+
+      h1 {
+        color: #333;
+        margin: 0 0 10px 0;
+        font-size: 28px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        h1 {
+          color: #fff;
+        }
+      }
+
+      .subtitle {
+        color: #666;
+        margin: 0 0 30px 0;
+        font-size: 16px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .subtitle {
+          color: #aaa;
+        }
+      }
+
+      .button-container {
+        margin: 30px 0;
+      }
+
+      .info-box {
+        background: #f5f5f5;
+        border-left: 4px solid #667eea;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 4px;
+        text-align: left;
+        font-size: 14px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .info-box {
+          background: #2a2a2a;
+          border-left-color: #8b9dff;
+        }
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin: 30px 0;
+        text-align: left;
+      }
+
+      .feature {
+        padding: 15px;
+        background: #f9f9f9;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .feature {
+          background: #2a2a2a;
+        }
+      }
+
+      .feature-icon {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+
+      .footer {
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #ddd;
+        font-size: 12px;
+        color: #999;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .footer {
+          border-top-color: #444;
+          color: #666;
+        }
+      }
+
+      .footer a {
+        color: #667eea;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .footer a {
+          color: #8b9dff;
+        }
+      }
+
+      /* ESP Web Install Button Styling */
+      esp-web-install-button {
+        --esp-tools-button-color: #667eea;
+        --esp-tools-button-text-color: white;
+        --esp-tools-button-border-radius: 8px;
+      }
+
+      esp-web-install-button button {
+        font-size: 16px;
+        font-weight: 600;
+        padding: 12px 32px;
+        margin: 0 auto;
+        display: block;
+      }
+
+      esp-web-install-button[install-unsupported] button,
+      esp-web-install-button[install-unsupported] slot {
+        display: none;
+      }
+
+      .unsupported-message {
+        background: #fff3cd;
+        border: 1px solid #ffc107;
+        color: #856404;
+        padding: 15px;
+        border-radius: 8px;
+        margin: 20px 0;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .unsupported-message {
+          background: #664d03;
+          border-color: #997404;
+          color: #ffecb5;
+        }
+      }
+
+      .supported-devices {
+        text-align: left;
+        margin: 30px 0;
+        font-size: 14px;
+      }
+
+      .supported-devices h3 {
+        margin: 15px 0 10px 0;
+        color: #333;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .supported-devices h3 {
+          color: #fff;
+        }
+      }
+
+      .device-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .device-list li {
+        padding: 8px;
+        background: #f5f5f5;
+        border-radius: 4px;
+        font-size: 13px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .device-list li {
+          background: #2a2a2a;
+        }
+      }
+    </style>
+    <script
+      type="module"
+      src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1>🔧 Xiaozhi AI IoT Flasher</h1>
+        <p class="subtitle">Flash firmware to your ESP device directly</p>
+
+        <esp-web-install-button manifest="./manifest.json">
+          <span slot="unsupported">
+            ⚠️ Your browser doesn't support this feature. Please use Google
+            Chrome, Microsoft Edge, or Brave.
+          </span>
+          <span slot="not-allowed">
+            ⚠️ This feature only works on HTTPS websites or localhost.
+          </span>
+        </esp-web-install-button>
+
+        <div class="info-box">
+          <strong>📋 Firmware Info:</strong>
+          <ul style="margin: 8px 0; padding-left: 20px;">
+            <li>Name: Xiaozhi AI IoT 3.5</li>
+            <li>Version: 3.5</li>
+            <li>Size: Check firmware file</li>
+          </ul>
+        </div>
+
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <div><strong>Fast</strong><br />Flash in seconds</div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🔒</div>
+            <div><strong>Safe</strong><br />No driver needed</div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">🌐</div>
+            <div><strong>Browser</strong><br />Works online</div>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">📱</div>
+            <div><strong>Compatible</strong><br />Multiple boards</div>
+          </div>
+        </div>
+
+        <div class="supported-devices">
+          <h3>✓ Supported Devices</h3>
+          <ul class="device-list">
+            <li>ESP32</li>
+            <li>ESP32-S3</li>
+            <li>ESP32-C3</li>
+            <li>ESP8266</li>
+            <li>And other ESP variants</li>
+            <li>Connect via USB</li>
+          </ul>
+        </div>
+
+        <div class="info-box">
+          <strong>📚 How to use:</strong>
+          <ol style="margin: 8px 0; padding-left: 20px;">
+            <li>Connect your ESP device to the computer via USB</li>
+            <li>Click the "Connect" button above</li>
+            <li>Select your device from the list</li>
+            <li>Click "Install" and wait for completion</li>
+          </ol>
+        </div>
+
+        <div class="info-box" id="troubleshoot">
+          <strong>🛠 Troubleshooting (ESP32-S3 initialization)</strong>
+          <ol style="margin: 8px 0; padding-left: 20px; font-size:14px;">
+            <li>If you see: <em>Failed to initialize. Try resetting your device or holding the BOOT button while clicking INSTALL.</em> — try these steps:</li>
+            <li>Hold the <strong>BOOT</strong> (IO0) button on the board and click <strong>Install</strong>. Release when flashing starts.</li>
+            <li>If that doesn't work: press <strong>EN/RESET</strong> (or press reset twice) and try again.</li>
+            <li>Use Google Chrome, Microsoft Edge or Brave (Web Serial support required).</li>
+            <li>Make sure no other application (serial monitor, Arduino IDE) is using the serial port.</li>
+            <li>Try toggling baud: some boards work better if the uploader retries at lower baud (the UI uses 115200 by default).</li>
+            <li>If you built firmware using ESP-IDF (ESP32/ESP32-S3), ensure you uploaded a <strong>merged firmware</strong> (single binary) or supply proper parts with offsets. Example merge command:
+              <pre style="background:#f0f0f0;padding:8px;border-radius:6px;">esptool --chip esp32 merge_bin -o merged-firmware.bin --flash_mode dio --flash_freq 40m --flash_size 4MB 0x1000 bootloader.bin 0x8000 partitions.bin 0xe000 boot_app0.bin 0x10000 app.bin</pre>
+            </li>
+            <li>If problems persist, enable detailed logs in the browser console and share them with me. Open DevTools → Console, reproduce the error and copy messages.</li>
+          </ol>
+        </div>
+
+        <div class="footer">
+          <p>
+            Powered by
+            <a href="https://github.com/esphome/esp-web-tools" target="_blank"
+              >ESP Web Tools</a
+            >
+          </p>
+          <p>
+            Firmware:
+            <a
+              href="https://github.com/vqtuan789/Flasher_firmware"
+              target="_blank"
+              >Xiaozhi AI IoT</a
+            >
+          </p>
+          <p style="margin: 10px 0 0 0; font-size: 11px; color: #666;">
+            © 2026 TuanVQ. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
