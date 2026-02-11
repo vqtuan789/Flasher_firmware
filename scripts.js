@@ -410,11 +410,23 @@ function showFirmwareInfo(firmware) {
     // Xử lý schematic link và icon
     const schematicIcon = document.getElementById('schematicIcon');
     const schematicContainer = document.getElementById('schematicContainer');
-    if (firmware.schematic && firmware.icon) {
-        // Set schematic URL vào href
-        schematicLink.href = firmware.schematic;
-        // Set icon URL vào img src
-        schematicIcon.src = firmware.icon;
+    // Resolve schematic/icon URLs so project GitHub Pages paths work
+    const resolveAssetUrl = (p) => {
+        if (!p) return '';
+        if (p.startsWith('http://') || p.startsWith('https://')) return p;
+        // Strip leading slash so path resolves relative to repo base on Pages
+        if (p.startsWith('/')) p = p.replace(/^\//, '');
+        return new URL(p, document.baseURI).href;
+    };
+
+    const schematicUrl = resolveAssetUrl(firmware.schematic || '');
+    const iconUrl = resolveAssetUrl(firmware.icon || '');
+
+    if (schematicUrl || iconUrl) {
+        if (schematicUrl) schematicLink.href = schematicUrl;
+        else schematicLink.href = '#';
+
+        if (iconUrl) schematicIcon.src = iconUrl;
         schematicContainer.classList.remove('d-none'); // Hiển thị container
     } else {
         schematicContainer.classList.add('d-none'); // Ẩn container nếu không có schematic hoặc icon
@@ -466,7 +478,20 @@ async function downloadFirmware(firmware) {
                 }
             }
         } else {
-            throw new Error('Định dạng đường dẫn không hợp lệ');
+            // Treat as relative path. If path starts with a leading slash
+            // it becomes root-relative (e.g. /samples/...) which breaks
+            // GitHub Pages project sites (they need /<repo>/samples/...).
+            // Remove leading slash to make it relative to the current
+            // document base (document.baseURI) so new URL() resolves to
+            // the repo subpath when hosted as a project page.
+            if (url.startsWith('/')) {
+                url = url.replace(/^\//, '');
+            }
+
+            // samples/a.bin -> auto convert thành full URL relative to page
+            url = new URL(url, document.baseURI).href;
+
+            log(`📦 Relative path → ${url}`);
         }
         
         // Try main URL first, then fallbacks
